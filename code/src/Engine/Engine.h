@@ -2,7 +2,7 @@
 #define _EASY_CARD_ENGINE_H_
 
 #include "Engine/IEngine.h"
-#include "lua/lua.h"
+#include "GameFactory.h"
 
 namespace EasyCard
 {
@@ -12,9 +12,11 @@ namespace EasyCard
     public:
         CEngine();
         ~CEngine();
-        virtual bool Initalize();
+        bool Initalize();
+        IGameFactory* GetGameFactory();
     private:
-        lua_State* m_luaState;
+        CGameFactory m_factory;
+
     };
 }
 

@@ -1,0 +1,7 @@
+Root/
+    Games/
+        Factory.cf
+        Game1v1.gam
+        Game5P.gam
+        Game8P.gam
+    Engine.dll

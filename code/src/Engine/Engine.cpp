@@ -4,7 +4,6 @@
 namespace EasyCard
 {
     CEngine::CEngine()
-        : m_luaState()
     {
     }
 
@@ -16,6 +15,11 @@ namespace EasyCard
     bool CEngine::Initalize()
     {
 
+    }
+
+    IGameFactory* CEngine::GetGameFactory()
+    {
+        return &m_factory;
     }
 
 }

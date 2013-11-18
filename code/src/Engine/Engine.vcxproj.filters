@@ -22,6 +22,9 @@
     <Filter Include="LuaAdapter">
       <UniqueIdentifier>{e428c0e8-9743-4935-808a-f7cf4278c74d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{f9cd39db-fab7-4b42-b422-6349d6a4637c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -108,8 +111,11 @@
     <ClInclude Include="Engine.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="LuaEngine.h">
+    <ClInclude Include="LuaGame.h">
       <Filter>LuaAdapter</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFactory.h">
+      <Filter>Engine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -215,8 +221,11 @@
     <ClCompile Include="Engine.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="LuaEngine.cpp">
+    <ClCompile Include="LuaGame.cpp">
       <Filter>LuaAdapter</Filter>
+    </ClCompile>
+    <ClCompile Include="GameFactory.cpp">
+      <Filter>Engine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
