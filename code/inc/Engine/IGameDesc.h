@@ -7,8 +7,8 @@ namespace EasyCard
 	class IGameDesc
 	{
 	public:
-		virtual char* GetName() = 0;
-		virtual char* GetDisplayName() = 0;
+		virtual const char* GetName() = 0;
+		virtual const char* GetDisplayName() = 0;
 		virtual int GetPlayerNumber() = 0;
 	};
 }

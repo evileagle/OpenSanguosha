@@ -3,17 +3,17 @@
 
 #include "ECCommon.h"
 
-class IGame;
-class IGameDesc;
 
 namespace EasyCard
 {
+    class IGame;
+    class IGameDesc;
 
 	class IGameFactory
 	{
 	public:
 		virtual uint GetGameCount() = 0;
-		virtual IGameDesc* GetGameDesc(uint nIndex) = 0;
+		virtual const IGameDesc* GetGameDesc(uint nIndex) = 0;
 		virtual IGame* CreateGame(char* szName) = 0;
 	};
 

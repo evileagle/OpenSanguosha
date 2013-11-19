@@ -14,7 +14,7 @@ namespace EasyCard
 
     bool CEngine::Initalize()
     {
-
+        return true;
     }
 
     IGameFactory* CEngine::GetGameFactory()
