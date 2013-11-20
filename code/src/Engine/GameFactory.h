@@ -5,6 +5,9 @@
 #include "lua/lua.h"
 #include "lua/lauxlib.h"
 #include "lua/lualib.h"
+#include "LuaPlus/table.h"
+
+using namespace LuaPlus;
 
 namespace EasyCard
 {
@@ -18,7 +21,8 @@ namespace EasyCard
         virtual const IGameDesc* GetGameDesc(uint nIndex);
         virtual IGame* CreateGame(char* szName);
     private:
-        bool CreateDescriptor(lua_State* state);
+        bool CreateDescriptor(lua_State* state, table& desc );
+        bool CreateDescriptors(lua_State* state, table& games);
 
 	private:
         ptr_vector m_descriptors;

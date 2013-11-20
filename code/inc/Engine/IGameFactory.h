@@ -1,8 +1,9 @@
 #ifndef _EASY_CARD_GAME_FACTORY_INTERFACE_H_
 #define _EASY_CARD_GAME_FACTORY_INTERFACE_H_
 
-#include "ECCommon.h"
+#include "Platform/type_def.h"
 
+using namespace Platform;
 
 namespace EasyCard
 {

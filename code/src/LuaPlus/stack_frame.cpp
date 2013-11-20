@@ -1,28 +1,28 @@
-#include "LuaHelper/auto_stack.h"
+#include "LuaPlus/stack_frame.h"
 #include <assert.h>
 
-namespace LuaHelper
+namespace LuaPlus
 {
-    CAutoStack::CAutoStack()
+    stack_frame::stack_frame()
         : m_nTop(0)
         , m_pState(NULL)
     {
 
     }
 
-    CAutoStack::CAutoStack( lua_State* l )
+    stack_frame::stack_frame( lua_State* l )
     {
-        Attach(l);
+        attach(l);
     }
 
-    void CAutoStack::Attach( lua_State* l )
+    void stack_frame::attach( lua_State* l )
     {
         assert(l != nullptr);
         m_pState = l;
         m_nTop = lua_gettop(l);
     }
 
-    CAutoStack::~CAutoStack()
+    stack_frame::~stack_frame()
     {
         if (m_pState != nullptr)
         {
@@ -31,7 +31,7 @@ namespace LuaHelper
         }
     }
 
-    lua_State* CAutoStack::Detach()
+    lua_State* stack_frame::detach()
     {
         lua_State* pRet = m_pState;
         m_pState = nullptr;

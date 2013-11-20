@@ -22,11 +22,11 @@
     <Filter Include="Common">
       <UniqueIdentifier>{f9cd39db-fab7-4b42-b422-6349d6a4637c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="LuaHelper">
-      <UniqueIdentifier>{2b7c219d-1cb6-426b-85d7-bb85bc4552fb}</UniqueIdentifier>
-    </Filter>
     <Filter Include="LuaEngine">
       <UniqueIdentifier>{e428c0e8-9743-4935-808a-f7cf4278c74d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaPlus">
+      <UniqueIdentifier>{2b7c219d-1cb6-426b-85d7-bb85bc4552fb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -126,8 +126,11 @@
     <ClInclude Include="LuaEngine\LuaGame.h">
       <Filter>LuaEngine</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\LuaHelper\auto_stack.h">
-      <Filter>LuaHelper</Filter>
+    <ClInclude Include="..\..\inc\LuaPlus\stack_frame.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\LuaPlus\table.h">
+      <Filter>LuaPlus</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -242,11 +245,14 @@
     <ClCompile Include="GameDesc.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="..\LuaHelper\auto_stack.cpp">
-      <Filter>LuaHelper</Filter>
-    </ClCompile>
     <ClCompile Include="LuaEngine\LuaGame.cpp">
       <Filter>LuaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LuaPlus\stack_frame.cpp">
+      <Filter>LuaPlus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LuaPlus\table.cpp">
+      <Filter>LuaPlus</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

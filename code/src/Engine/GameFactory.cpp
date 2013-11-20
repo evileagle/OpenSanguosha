@@ -1,5 +1,6 @@
 #include "GameFactory.h"
 #include "GameDesc.h"
+#include "LuaPlus/stack_frame.h"
 
 namespace EasyCard
 {
@@ -23,27 +24,10 @@ namespace EasyCard
         luaL_openlibs(state);
         luaL_dofile(state, "./Games/Factory.cfg");
         lua_getglobal(state, "games");
-        if (!lua_istable(state, -1))
-        {
-            return false;
-        }
-        lua_len(state, -1);
-        int len = lua_tointeger(state, -1);
-        lua_pop(state, 1);
-        for (int i=1; i<= len; i++)
-        {
-            lua_pushinteger(state, i);
-            lua_gettable(state, -1);
-            if (!lua_istable(state, -1))
-            {
-                lua_pop(state, 1);
-                continue;
-            }
-            CreateDescriptor(state);
-            lua_pop(state, 1);
-        }
+        table games(state, -1);
+        bool bResult = CreateDescriptors(state, games);
         lua_close(state);
-        return true;
+        return bResult;
     }
 
     uint CGameFactory::GetGameCount()
@@ -65,42 +49,55 @@ namespace EasyCard
         return NULL;
     }
 
-    bool CGameFactory::CreateDescriptor( lua_State* state )
+    bool CGameFactory::CreateDescriptor( lua_State* state, table& desc )
     {
-        int nTop = lua_gettop(state);
-        bool bSuccess = false;
-        do 
+        stack_frame sf(state);
+        if (!desc.is_valid())
         {
-            lua_getfield(state, -1, "name");
-            if (!lua_isstring(state, -1))
+            return false;
+        }
+        string name;
+        if (desc.get_value("name", name))
+        {
+            return false;
+        }
+
+        string displayname;
+        if (desc.get_value("display_name", displayname))
+        {
+            return false;
+        }
+
+        lua_Unsigned nPlayerNumber;
+        if (desc.get_value("player_number", nPlayerNumber))
+        {
+            return false;
+        }
+
+        CGameDesc* pDesc = new CGameDesc(name.c_str(), displayname.c_str(), nPlayerNumber);
+
+        m_descriptors.push_back(pDesc);
+
+        return true;
+    }
+
+    bool CGameFactory::CreateDescriptors( lua_State* state, table& games )
+    {
+        if (!games.is_valid())
+        {
+            return false;
+        }
+        int len = games.get_len();
+        for (int i=1; i<= len; i++)
+        {
+            stack_frame sf(state);
+            table gamedesc;
+            if (games.get_value(i, gamedesc))
             {
-                break;
+                CreateDescriptor(state, gamedesc);
             }
-            const char* pName = lua_tostring(state, -1);
-
-            lua_getfield(state, -2, "display_name");
-            if (!lua_isstring(state, -1))
-            {
-                break;
-            }
-            const char* pDisPlayName = lua_tostring(state, -1);
-
-            lua_getfield(state, -3, "display_name");
-            if (!lua_isnumber(state, -1))
-            {
-                break;
-            }
-            int nPlayerNumber = lua_tointeger(state, -1);
-
-            CGameDesc* pDesc = new CGameDesc(pName, pDisPlayName, nPlayerNumber);
-
-            m_descriptors.push_back(pDesc);
-
-            bSuccess = true;
-        } while (false);
-
-        lua_settop(state, nTop);
-        return bSuccess;
+        }
+        return true;
     }
 
 
