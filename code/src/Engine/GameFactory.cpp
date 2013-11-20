@@ -83,6 +83,7 @@ namespace EasyCard
 
     bool CGameFactory::CreateDescriptors( lua_State* state, table& games )
     {
+        stack_frame sf(state);
         if (!games.is_valid())
         {
             return false;
