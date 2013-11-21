@@ -5,6 +5,6 @@ namespace EasyCard
 {
     IEngine* GetEngine()
     {
-        return new CEngine;
+        return CEngineS::GetInstace();
     }
 }

@@ -14,7 +14,7 @@
     <ProjectGuid>{550A1F7B-C4C3-4C43-8680-BAAB81679653}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>OpenSanguosha</RootNamespace>
-    <ProjectName>Engine</ProjectName>
+    <ProjectName>EngineS</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

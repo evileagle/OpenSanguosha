@@ -7,15 +7,17 @@
 namespace EasyCard
 {
 
-    class CEngine : public IEngine
+    class CEngineS : public IEngine
     {
     public:
-        CEngine();
-        ~CEngine();
+        CEngineS();
+        ~CEngineS();
+        static CEngineS* GetInstace();
         bool Initalize();
         IGameFactory* GetGameFactory();
     private:
         CGameFactory m_factory;
+        static CEngineS* s_pInstance;
 
     };
 }
