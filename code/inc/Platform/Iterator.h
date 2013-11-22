@@ -10,6 +10,7 @@ namespace Platform
         virtual T& Get() = 0;
         virtual bool HasNext() = 0;
         virtual void Next() = 0;
+        virtual void Close() = 0;
     };
 }
 

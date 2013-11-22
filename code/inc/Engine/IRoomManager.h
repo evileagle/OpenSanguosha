@@ -11,13 +11,14 @@ namespace EasyCard
 {
     class IRoom;
 
-    typedef Iterator<IRoom> RoomIterator;
 
     class IRoomMgr
     {
     public:
+    class Iterator : public Iterator<IRoom>;
+
         virtual IRoom* CreateRoom() = 0;
-        virtual RoomIterator GetRoomIterator() = 0;
+        virtual Iterator* OpenIterator() = 0;
 
     };
 }
