@@ -6,7 +6,7 @@ namespace EasyCard
 {
     class IGameFactory;
 
-    class IEngine
+    class ICore
     {
 		virtual IGameFactory* GetGameFactory() = 0;
     };

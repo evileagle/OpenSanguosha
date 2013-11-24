@@ -1,7 +1,7 @@
 #ifndef _EASY_CARD_GAME_CLASS_H_
 #define _EASY_CARD_GAME_CLASS_H_
 
-#include "Engine/IGame.h"
+#include "ECCore/IGame.h"
 
 namespace EasyCard
 {

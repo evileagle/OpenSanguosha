@@ -1,18 +1,18 @@
-#include "Engine.h"
+#include "ECCore.h"
 
 
 namespace EasyCard
 {
-    CEngineS::CEngineS()
+    CECCore::CECCore()
     {
     }
 
 
-    CEngineS::~CEngineS()
+    CECCore::~CECCore()
     {
     }
 
-    bool CEngineS::Initalize()
+    bool CECCore::Initalize()
     {
         if (!m_factory.Initialize())
         {
@@ -21,16 +21,16 @@ namespace EasyCard
         return true;
     }
 
-    IGameFactory* CEngineS::GetGameFactory()
+    IGameFactory* CECCore::GetGameFactory()
     {
         return &m_factory;
     }
 
-    CEngineS* CEngineS::GetInstace()
+    CECCore* CECCore::GetInstace()
     {
         if (s_pInstance == nullptr)
         {
-            s_pInstance = new CEngineS;
+            s_pInstance = new CECCore;
             if (s_pInstance == nullptr)
             {
                 return nullptr;

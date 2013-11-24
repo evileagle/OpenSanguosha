@@ -1,23 +1,23 @@
 #ifndef _EASY_CARD_ENGINE_H_
 #define _EASY_CARD_ENGINE_H_
 
-#include "Engine/IEngine.h"
+#include "ECCore/ICore.h"
 #include "GameFactory.h"
 
 namespace EasyCard
 {
 
-    class CEngineS : public IEngine
+    class CECCore : public ICore
     {
     public:
-        CEngineS();
-        ~CEngineS();
-        static CEngineS* GetInstace();
+        CECCore();
+        ~CECCore();
+        static CECCore* GetInstace();
         bool Initalize();
         IGameFactory* GetGameFactory();
     private:
         CGameFactory m_factory;
-        static CEngineS* s_pInstance;
+        static CECCore* s_pInstance;
 
     };
 }
