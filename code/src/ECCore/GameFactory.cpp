@@ -30,12 +30,12 @@ namespace EasyCard
         return bResult;
     }
 
-    uint CGameFactory::GetGameCount()
+    size_t CGameFactory::GetGameCount()
     {
         return m_descriptors.size();
     }
 
-    const IGameDesc* CGameFactory::GetGameDesc( uint nIndex )
+    const IGameDesc* CGameFactory::GetGameDesc( size_t nIndex )
     {
         if (nIndex >= m_descriptors.size())
         {
@@ -44,7 +44,7 @@ namespace EasyCard
         return (IGameDesc*)m_descriptors[nIndex];
     }
 
-    IGame* CGameFactory::CreateGame( char* szName )
+    const IGame* CGameFactory::CreateGame( const char* szName )
     {
         return NULL;
     }

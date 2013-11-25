@@ -1,9 +1,8 @@
 #ifndef _EASY_CARD_GAME_FACTORY_INTERFACE_H_
 #define _EASY_CARD_GAME_FACTORY_INTERFACE_H_
 
-#include "Platform/type_def.h"
+#include "EC_Common/type_def.h"
 
-using namespace Platform;
 
 namespace EasyCard
 {
@@ -13,9 +12,9 @@ namespace EasyCard
 	class IGameFactory
 	{
 	public:
-		virtual uint GetGameCount() = 0;
-		virtual const IGameDesc* GetGameDesc(uint nIndex) = 0;
-		virtual IGame* CreateGame(char* szName) = 0;
+		virtual size_t GetGameCount() = 0;
+		virtual const IGameDesc* GetGameDesc(size_t nIndex) = 0;
+		virtual const IGame* CreateGame(const char* szName) = 0;
 	};
 
 }

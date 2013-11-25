@@ -11,14 +11,12 @@ namespace EasyCard
         EC_SUCESS = 0,
     };
 
-    typedef unsigned long ulong;
-    typedef unsigned int uint;
     typedef vector<void*> ptr_vector;
     typedef vector<string> string_vector;
     typedef vector<int>     int_vector;
     typedef vector<long>    long_vector;
-    typedef vector<uint>    uint_vector;
-    typedef vector<ulong> ulong_vector;
+    typedef vector<unsigned int>    uint_vector;
+    typedef vector<unsigned long> ulong_vector;
 }
 
 #endif

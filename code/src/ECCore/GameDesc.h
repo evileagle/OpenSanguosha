@@ -1,10 +1,7 @@
 #ifndef _EASY_CARD_GAME_DESCRIPTOTION_CLASS_H_
 #define _EASY_CARD_GAME_DESCRIPTOTION_CLASS_H_
 
-#include "Engine/IGameDesc.h"
-#include "Platform/type_def.h"
-
-using namespace Platform;
+#include "EC_Core/IGameDesc.h"
 
 namespace EasyCard
 {
@@ -12,16 +9,20 @@ namespace EasyCard
     {
     public:
         CGameDesc();
-        CGameDesc(const char* szName, const char* szDisplayName, uint nPlayerNumber);
+        CGameDesc(const char* szName, const char* szDisplayName, size_t nPlayerNumber);
         ~CGameDesc();
 
         virtual const char* GetName();
         virtual const char* GetDisplayName();
-        virtual int GetPlayerNumber();
+        virtual size_t GetPlayerNumber();
 
-        void SetName(char* szName);
-        void SetDisplayName(char* szName);
-        void SetPlayerNumber(int nNumber);
+        void SetName(const char* szName);
+        void SetDisplayName(const char* szDisplayName);
+        void SetPlayerNumber(size_t nNumber);
+    private:
+        string m_name;
+        string m_displayName;
+        size_t m_number;
     };
 }
 
