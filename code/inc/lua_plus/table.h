@@ -5,10 +5,10 @@
 #include "lua/luaconf.h"
 #include <string>
 
-using namespace std;
 
 namespace LuaPlus
 {
+    using namespace std;
     class table
     {
     public:

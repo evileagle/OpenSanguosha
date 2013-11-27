@@ -1,13 +1,12 @@
 #include "Game.h"
 #include <assert.h>
-#include "lua/lua.h"
 #include "lua/lauxlib.h"
 
 namespace EasyCard
 {
     CGame::CGame()
     {
-
+        intptr_t
     }
 
     CGame::CGame( const char* szName )
@@ -28,7 +27,7 @@ namespace EasyCard
     void CGame::SetName( const char* szName )
     {
         assert(szName);
-        if (szName != nullptr)
+        if (szName != NULL)
         {
             m_name = szName;
         }

@@ -17,7 +17,7 @@ namespace EasyCard
     bool CGameFactory::Initialize()
     {
         lua_State* state = luaL_newstate();
-        if (state == nullptr)
+        if (state == NULL)
         {
             return false;
         }

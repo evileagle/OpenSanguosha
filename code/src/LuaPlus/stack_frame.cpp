@@ -17,24 +17,24 @@ namespace LuaPlus
 
     void stack_frame::attach( lua_State* l )
     {
-        assert(l != nullptr);
+        assert(l != NULL);
         m_pState = l;
         m_nTop = lua_gettop(l);
     }
 
     stack_frame::~stack_frame()
     {
-        if (m_pState != nullptr)
+        if (m_pState != NULL)
         {
             lua_settop(m_pState, m_nTop);
-            m_pState = nullptr;
+            m_pState = NULL;
         }
     }
 
     lua_State* stack_frame::detach()
     {
         lua_State* pRet = m_pState;
-        m_pState = nullptr;
+        m_pState = NULL;
         m_nTop = 0;
         return pRet;
     }

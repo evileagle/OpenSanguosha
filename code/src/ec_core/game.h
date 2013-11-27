@@ -11,7 +11,7 @@ namespace EasyCard
     {
     public:
         CGame();
-        CGame(const char* szName);
+        explicit CGame(const char* szName);
         ~CGame();
 
         virtual const char* GetName();

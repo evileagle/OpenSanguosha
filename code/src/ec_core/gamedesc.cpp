@@ -41,7 +41,7 @@ namespace EasyCard
     void CGameDesc::SetName( const char* szName )
     {
         assert(szName);
-        if (szName != nullptr)
+        if (szName != NULL)
         {
             m_name = szName;
         }
@@ -50,7 +50,7 @@ namespace EasyCard
     void CGameDesc::SetDisplayName( const char* szDisplayName )
     {
         assert(szDisplayName);
-        if (szDisplayName != nullptr)
+        if (szDisplayName != NULL)
         {
             m_displayName = szDisplayName;
         }

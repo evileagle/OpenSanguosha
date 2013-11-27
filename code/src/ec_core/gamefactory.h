@@ -7,10 +7,10 @@
 #include "lua/lualib.h"
 #include "LuaPlus/table.h"
 
-using namespace LuaPlus;
 
 namespace EasyCard
 {
+    using namespace LuaPlus;
 	class CGameFactory : public IGameFactory
 	{
 	public:

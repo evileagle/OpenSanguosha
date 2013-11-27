@@ -6,7 +6,7 @@ namespace LuaPlus
 
 
     table::table()
-        : m_state(nullptr)
+        : m_state(NULL)
         , m_index(0)
     {
 
@@ -20,7 +20,7 @@ namespace LuaPlus
     table::~table()
     {
         m_index = 0;
-        m_state = nullptr;
+        m_state = NULL;
     }
 
     bool table::init( lua_State* state, int index )
@@ -36,7 +36,7 @@ namespace LuaPlus
 
     bool table::is_valid()
     {
-        return m_state != nullptr && m_index != 0;
+        return m_state != NULL && m_index != 0;
     }
 
     lua_Unsigned table::get_len()

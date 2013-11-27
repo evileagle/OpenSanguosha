@@ -28,12 +28,12 @@ namespace EasyCard
 
     CECCore* CECCore::GetInstace()
     {
-        if (s_pInstance == nullptr)
+        if (s_pInstance == NULL)
         {
             s_pInstance = new CECCore;
-            if (s_pInstance == nullptr)
+            if (s_pInstance == NULL)
             {
-                return nullptr;
+                return NULL;
             }
             s_pInstance->Initalize();
         }

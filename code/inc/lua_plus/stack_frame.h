@@ -9,7 +9,7 @@ namespace LuaPlus
     {
     public:
         stack_frame();
-        stack_frame(lua_State* l);
+        explicit stack_frame(lua_State* l);
         void attach(lua_State* l);
         lua_State* detach();
         ~stack_frame();

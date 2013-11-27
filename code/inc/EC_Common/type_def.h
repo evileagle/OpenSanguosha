@@ -2,10 +2,10 @@
 #define _EASY_CARD_COMMON_TYPE_DEFINE_H_
 
 #include <vector>
-using namespace std;
 
 namespace EasyCard
 {
+    using namespace std;
     typedef enum ecode
     {
         EC_SUCESS = 0,
