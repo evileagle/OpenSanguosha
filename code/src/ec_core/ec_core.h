@@ -1,8 +1,8 @@
 #ifndef _EASY_CARD_ENGINE_H_
 #define _EASY_CARD_ENGINE_H_
 
-#include "EC_Core/ICore.h"
-#include "GameFactory.h"
+#include "ec_core/core.h"
+#include "game_factory_imp.h"
 
 namespace EasyCard
 {

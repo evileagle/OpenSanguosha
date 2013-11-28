@@ -14,7 +14,7 @@
     <ProjectGuid>{550A1F7B-C4C3-4C43-8680-BAAB81679653}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>OpenSanguosha</RootNamespace>
-    <ProjectName>ECCore</ProjectName>
+    <ProjectName>ec_core</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -55,7 +55,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>ECCore.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>ec_core.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -73,11 +73,11 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>ECCore.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>ec_core.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ECCore.def" />
+    <None Include="ec_core.def" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -106,8 +106,8 @@
     <ClInclude Include="..\..\3rd\lua-5.2.2\src\lundump.h" />
     <ClInclude Include="..\..\3rd\lua-5.2.2\src\lvm.h" />
     <ClInclude Include="..\..\3rd\lua-5.2.2\src\lzio.h" />
-    <ClInclude Include="..\..\inc\LuaPlus\stack_frame.h" />
-    <ClInclude Include="..\..\inc\LuaPlus\table.h" />
+    <ClInclude Include="..\..\inc\lua_plus\stack_frame.h" />
+    <ClInclude Include="..\..\inc\lua_plus\table.h" />
     <ClInclude Include="ECCore.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameDesc.h" />
@@ -147,8 +147,8 @@
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lundump.c" />
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lvm.c" />
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lzio.c" />
-    <ClCompile Include="..\LuaPlus\stack_frame.cpp" />
-    <ClCompile Include="..\LuaPlus\table.cpp" />
+    <ClCompile Include="..\lua_plus\stack_frame.cpp" />
+    <ClCompile Include="..\lua_plus\table.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="ECCore.cpp" />
     <ClCompile Include="Game.cpp" />

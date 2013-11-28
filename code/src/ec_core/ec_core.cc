@@ -1,4 +1,4 @@
-#include "ECCore.h"
+#include "ec_core.h"
 
 
 namespace EasyCard

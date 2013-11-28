@@ -5,10 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -16,22 +12,22 @@
     <Filter Include="lua">
       <UniqueIdentifier>{49e78e6b-0d84-4a08-92d5-e0de8405c8fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ECCore">
-      <UniqueIdentifier>{c1923d93-c0a1-4c92-aeb2-fa519e89bdf9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Common">
-      <UniqueIdentifier>{f9cd39db-fab7-4b42-b422-6349d6a4637c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="LuaApi">
       <UniqueIdentifier>{e428c0e8-9743-4935-808a-f7cf4278c74d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="LuaPlus">
+    <Filter Include="ec_common">
+      <UniqueIdentifier>{f9cd39db-fab7-4b42-b422-6349d6a4637c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ec_core">
+      <UniqueIdentifier>{c1923d93-c0a1-4c92-aeb2-fa519e89bdf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua_plus">
       <UniqueIdentifier>{2b7c219d-1cb6-426b-85d7-bb85bc4552fb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
-    <None Include="ECCore.def">
+    <None Include="ec_core.def">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
@@ -112,25 +108,25 @@
       <Filter>lua</Filter>
     </ClInclude>
     <ClInclude Include="ECCore.h">
-      <Filter>ECCore</Filter>
+      <Filter>ec_core</Filter>
     </ClInclude>
     <ClInclude Include="GameFactory.h">
-      <Filter>ECCore</Filter>
+      <Filter>ec_core</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>ECCore</Filter>
+      <Filter>ec_core</Filter>
     </ClInclude>
     <ClInclude Include="GameDesc.h">
-      <Filter>ECCore</Filter>
+      <Filter>ec_core</Filter>
     </ClInclude>
     <ClInclude Include="LuaApi\LuaGame.h">
       <Filter>LuaApi</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\LuaPlus\stack_frame.h">
-      <Filter>LuaPlus</Filter>
+    <ClInclude Include="..\..\inc\lua_plus\stack_frame.h">
+      <Filter>lua_plus</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\LuaPlus\table.h">
-      <Filter>LuaPlus</Filter>
+    <ClInclude Include="..\..\inc\lua_plus\table.h">
+      <Filter>lua_plus</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -234,25 +230,25 @@
       <Filter>lua</Filter>
     </ClCompile>
     <ClCompile Include="ECCore.cpp">
-      <Filter>ECCore</Filter>
+      <Filter>ec_core</Filter>
     </ClCompile>
     <ClCompile Include="GameFactory.cpp">
-      <Filter>ECCore</Filter>
+      <Filter>ec_core</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>ECCore</Filter>
+      <Filter>ec_core</Filter>
     </ClCompile>
     <ClCompile Include="GameDesc.cpp">
-      <Filter>ECCore</Filter>
+      <Filter>ec_core</Filter>
     </ClCompile>
     <ClCompile Include="LuaApi\LuaGame.cpp">
       <Filter>LuaApi</Filter>
     </ClCompile>
-    <ClCompile Include="..\LuaPlus\stack_frame.cpp">
-      <Filter>LuaPlus</Filter>
+    <ClCompile Include="..\lua_plus\stack_frame.cpp">
+      <Filter>lua_plus</Filter>
     </ClCompile>
-    <ClCompile Include="..\LuaPlus\table.cpp">
-      <Filter>LuaPlus</Filter>
+    <ClCompile Include="..\lua_plus\table.cpp">
+      <Filter>lua_plus</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
