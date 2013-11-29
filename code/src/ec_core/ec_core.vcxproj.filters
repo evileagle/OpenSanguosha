@@ -107,26 +107,26 @@
     <ClInclude Include="..\..\3rd\lua-5.2.2\src\lzio.h">
       <Filter>lua</Filter>
     </ClInclude>
-    <ClInclude Include="ECCore.h">
-      <Filter>ec_core</Filter>
-    </ClInclude>
-    <ClInclude Include="GameFactory.h">
-      <Filter>ec_core</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.h">
-      <Filter>ec_core</Filter>
-    </ClInclude>
-    <ClInclude Include="GameDesc.h">
-      <Filter>ec_core</Filter>
-    </ClInclude>
-    <ClInclude Include="LuaApi\LuaGame.h">
-      <Filter>LuaApi</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\lua_plus\stack_frame.h">
       <Filter>lua_plus</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\lua_plus\table.h">
       <Filter>lua_plus</Filter>
+    </ClInclude>
+    <ClInclude Include="ec_core.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="game_desc_imp.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="game_factory_imp.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="game_imp.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_api\lua_game.h">
+      <Filter>LuaApi</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -229,26 +229,26 @@
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lzio.c">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="ECCore.cpp">
-      <Filter>ec_core</Filter>
-    </ClCompile>
-    <ClCompile Include="GameFactory.cpp">
-      <Filter>ec_core</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>ec_core</Filter>
-    </ClCompile>
-    <ClCompile Include="GameDesc.cpp">
-      <Filter>ec_core</Filter>
-    </ClCompile>
-    <ClCompile Include="LuaApi\LuaGame.cpp">
-      <Filter>LuaApi</Filter>
-    </ClCompile>
     <ClCompile Include="..\lua_plus\stack_frame.cpp">
       <Filter>lua_plus</Filter>
     </ClCompile>
     <ClCompile Include="..\lua_plus\table.cpp">
       <Filter>lua_plus</Filter>
+    </ClCompile>
+    <ClCompile Include="ec_core.cc">
+      <Filter>ec_core</Filter>
+    </ClCompile>
+    <ClCompile Include="game_desc_imp.cc">
+      <Filter>ec_core</Filter>
+    </ClCompile>
+    <ClCompile Include="game_factory_imp.cc">
+      <Filter>ec_core</Filter>
+    </ClCompile>
+    <ClCompile Include="game_imp.cc">
+      <Filter>ec_core</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_api\lua_game.cpp">
+      <Filter>LuaApi</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
