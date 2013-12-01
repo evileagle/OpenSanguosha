@@ -2,6 +2,7 @@
 #define _EASY_CARD_COMMON_TYPE_DEFINE_H_
 
 #include <vector>
+#include <stddef.h>
 
 namespace EasyCard
 {

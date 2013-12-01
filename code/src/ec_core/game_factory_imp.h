@@ -1,11 +1,11 @@
 #ifndef _EASY_CARD_GAME_FACTORY_H_
 #define _EASY_CARD_GAME_FACTORY_H_
 
-#include "EC_Core/IGameFactory.h"
+#include "ec_core/game_factory.h"
 #include "lua/lua.h"
 #include "lua/lauxlib.h"
 #include "lua/lualib.h"
-#include "LuaPlus/table.h"
+#include "lua_plus/table.h"
 
 
 namespace EasyCard

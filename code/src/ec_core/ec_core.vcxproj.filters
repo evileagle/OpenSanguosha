@@ -128,6 +128,30 @@
     <ClInclude Include="lua_api\lua_game.h">
       <Filter>LuaApi</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\inc\ec_common\cmd.h">
+      <Filter>ec_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_common\cmdparser.h">
+      <Filter>ec_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_common\Iterator.h">
+      <Filter>ec_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_common\type_def.h">
+      <Filter>ec_common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_core\core.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_core\game.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_core\game_desc.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_core\game_factory.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

@@ -1,6 +1,6 @@
-#include "GameFactory.h"
-#include "GameDesc.h"
-#include "LuaPlus/stack_frame.h"
+#include "game_factory_imp.h"
+#include "game_desc_imp.h"
+#include "lua_plus/stack_frame.h"
 
 namespace EasyCard
 {
@@ -22,7 +22,7 @@ namespace EasyCard
             return false;
         }
         luaL_openlibs(state);
-        luaL_dofile(state, "./Games/Factory.cfg");
+        luaL_dofile(state, "./games/Factory.cfg");
         lua_getglobal(state, "games");
         table games(state, -1);
         bool bResult = CreateDescriptors(state, games);

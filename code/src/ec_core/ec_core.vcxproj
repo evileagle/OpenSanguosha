@@ -50,7 +50,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;OPENSANGUOSHA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd\lua-5.2.2\inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/lua-5.2.2/inc</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -66,7 +66,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OPENSANGUOSHA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd\lua-5.2.2\inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/lua-5.2.2/inc</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -106,6 +106,14 @@
     <ClInclude Include="..\..\3rd\lua-5.2.2\src\lundump.h" />
     <ClInclude Include="..\..\3rd\lua-5.2.2\src\lvm.h" />
     <ClInclude Include="..\..\3rd\lua-5.2.2\src\lzio.h" />
+    <ClInclude Include="..\..\inc\ec_common\cmd.h" />
+    <ClInclude Include="..\..\inc\ec_common\cmdparser.h" />
+    <ClInclude Include="..\..\inc\ec_common\Iterator.h" />
+    <ClInclude Include="..\..\inc\ec_common\type_def.h" />
+    <ClInclude Include="..\..\inc\ec_core\core.h" />
+    <ClInclude Include="..\..\inc\ec_core\game.h" />
+    <ClInclude Include="..\..\inc\ec_core\game_desc.h" />
+    <ClInclude Include="..\..\inc\ec_core\game_factory.h" />
     <ClInclude Include="..\..\inc\lua_plus\stack_frame.h" />
     <ClInclude Include="..\..\inc\lua_plus\table.h" />
     <ClInclude Include="ec_core.h" />

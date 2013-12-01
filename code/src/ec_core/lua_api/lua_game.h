@@ -1,15 +1,20 @@
 #ifndef _EASY_CARD_LUAGMAE_H_
 #define _EASY_CARD_LUAGMAE_H_
 
+struct lua_State;
+
 namespace EasyCard
 {
+    class IGame;
 	typedef struct LuaGame
 	{
-		IGame* m_pGame;
+		const IGame* game;
+        const lua_State* lua;
 	}*PLuaGame;
 
-	CreateLuaGame(lua_State* l);
-
+	
+    PLuaGame LoadGame(const char* name, const IGame* game);
+    void DestroyGame(PLuaGame game);
 }
 
 #endif

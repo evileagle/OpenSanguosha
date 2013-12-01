@@ -1,7 +1,7 @@
 #ifndef _EASY_CARD_GAME_DESCRIPTOTION_INTERFACE_H_
 #define _EASY_CARD_GAME_DESCRIPTOTION_INTERFACE_H_
 
-#include "EC_Common/type_def.h"
+#include "ec_common/type_def.h"
 
 namespace EasyCard
 {

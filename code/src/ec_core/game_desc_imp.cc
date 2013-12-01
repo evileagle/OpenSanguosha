@@ -1,9 +1,10 @@
-#include "GameDesc.h"
+#include "game_desc_imp.h"
 #include <assert.h>
+
+#include "ec_common/type_def.h"
 
 namespace EasyCard
 {
-
 
     CGameDesc::CGameDesc()
         : m_number(0)

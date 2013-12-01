@@ -1,41 +1,30 @@
-#include "Game.h"
+#include "game_imp.h"
 #include <assert.h>
 #include "lua/lauxlib.h"
 
-namespace EasyCard
+namespace EasyCard{
+
+CGame::CGame()
+    : game_(NULL)
 {
-    CGame::CGame()
-    {
-        intptr_t
-    }
+        
+}
 
-    CGame::CGame( const char* szName )
-    {
-        SetName(szName);
-    }
+CGame::CGame( const char* name )
+    : game_(NULL)
+{
+    set_name(name);
+}
 
-    CGame::~CGame()
-    {
+CGame::~CGame()
+{
 
-    }
+}
 
-    const char* CGame::GetName()
-    {
-        return m_name.c_str();
-    }
 
-    void CGame::SetName( const char* szName )
-    {
-        assert(szName);
-        if (szName != NULL)
-        {
-            m_name = szName;
-        }
-    }
-
-    EasyCard::ecode CGame::Load()
-    {
-        lua_State* state = luaL_newstate();
-    }
+EasyCard::ecode CGame::Load()
+{
+    game_ = LoadGame(name_.c_str(), this);
+}
 
 }
