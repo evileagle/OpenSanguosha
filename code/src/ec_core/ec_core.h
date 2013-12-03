@@ -3,10 +3,9 @@
 
 #include "ec_core/core.h"
 #include "game_factory_imp.h"
-
+struct lua_State;
 namespace EasyCard
 {
-
     class CECCore : public ICore
     {
     public:
@@ -16,7 +15,10 @@ namespace EasyCard
         bool Initalize();
         IGameFactory* GetGameFactory();
     private:
+        bool InitLua();
+
         CGameFactory m_factory;
+        lua_State* lua_;
         static CECCore* s_pInstance;
 
     };

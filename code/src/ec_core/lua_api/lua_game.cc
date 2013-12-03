@@ -4,10 +4,8 @@
 namespace EasyCard
 {
     luaL_Reg game_funcs = {};
-    EasyCard::PLuaGame LoadGame( const char* name, const IGame* game )
+    EasyCard::PLuaGame LoadGame(lua_State* lua,  const char* name, const IGame* game )
     {
-        lua_State* lua = luaL_newstate();
-        luaL_openlibs(lua);
         // push _G +1
         lua_pushglobaltable(lua);
         // push userdata +1
@@ -27,7 +25,6 @@ namespace EasyCard
         lua_setmetatable(lua, -2);
 
         PLuaGame lua_game = (PLuaGame)lua_touserdata(lua, -1);
-        lua_game->lua = lua;
         lua_game->game = game;
 
         // _G.game = userdata; -1
@@ -36,5 +33,7 @@ namespace EasyCard
         lua_pop(lua, -1);
         return lua_game;
     }
+
+
 
 }

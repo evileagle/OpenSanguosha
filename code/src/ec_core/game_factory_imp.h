@@ -18,14 +18,9 @@ namespace EasyCard
 		~CGameFactory();
         bool Initialize();
         virtual size_t GetGameCount();
-        virtual const IGameDesc* GetGameDesc(size_t nIndex);
-        virtual const IGame* CreateGame(const char* szName);
+        virtual const IGame* CreateGame(size_t index);
     private:
-        bool CreateDescriptor(lua_State* state, table& desc );
-        bool CreateDescriptors(lua_State* state, table& games);
 
-	private:
-        ptr_vector m_descriptors;
 	};
 
 }

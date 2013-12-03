@@ -14,6 +14,10 @@ namespace EasyCard
 
     bool CECCore::Initalize()
     {
+        if (!InitLua())
+        {
+            return false;
+        }
         if (!m_factory.Initialize())
         {
             return false;
@@ -39,6 +43,17 @@ namespace EasyCard
         }
         return s_pInstance;
 
+    }
+
+    bool CGame::InitLua()
+    {
+        lua_ = luaL_newstate();
+        if (lua_ == NULL)
+        {
+            return false;
+        }
+        luaL_openlibs(lua_);
+        return true;
     }
 
 }

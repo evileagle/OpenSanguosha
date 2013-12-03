@@ -112,15 +112,15 @@
     <ClInclude Include="..\..\inc\ec_common\type_def.h" />
     <ClInclude Include="..\..\inc\ec_core\core.h" />
     <ClInclude Include="..\..\inc\ec_core\game.h" />
-    <ClInclude Include="..\..\inc\ec_core\game_desc.h" />
     <ClInclude Include="..\..\inc\ec_core\game_factory.h" />
     <ClInclude Include="..\..\inc\lua_plus\stack_frame.h" />
     <ClInclude Include="..\..\inc\lua_plus\table.h" />
     <ClInclude Include="ec_core.h" />
-    <ClInclude Include="game_desc_imp.h" />
     <ClInclude Include="game_factory_imp.h" />
     <ClInclude Include="game_imp.h" />
+    <ClInclude Include="lua_api\lua_cards.h" />
     <ClInclude Include="lua_api\lua_game.h" />
+    <ClInclude Include="lua_api\lua_game_factory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lapi.c" />
@@ -155,14 +155,15 @@
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lundump.c" />
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lvm.c" />
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lzio.c" />
-    <ClCompile Include="..\lua_plus\stack_frame.cpp" />
-    <ClCompile Include="..\lua_plus\table.cpp" />
+    <ClCompile Include="..\lua_plus\stack_frame.cc" />
+    <ClCompile Include="..\lua_plus\table.cc" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="ec_core.cc" />
-    <ClCompile Include="game_desc_imp.cc" />
     <ClCompile Include="game_factory_imp.cc" />
     <ClCompile Include="game_imp.cc" />
-    <ClCompile Include="lua_api\lua_game.cpp" />
+    <ClCompile Include="lua_api\lua_cards.cc" />
+    <ClCompile Include="lua_api\lua_game.cc" />
+    <ClCompile Include="lua_api\lua_game_factory.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

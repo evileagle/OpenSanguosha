@@ -20,8 +20,8 @@ public:
 
     ecode Load();
 private:
+
     string name_;
-    PLuaGame game_;
 };
 }
 

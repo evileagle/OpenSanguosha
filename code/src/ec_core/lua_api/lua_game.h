@@ -9,11 +9,10 @@ namespace EasyCard
 	typedef struct LuaGame
 	{
 		const IGame* game;
-        const lua_State* lua;
 	}*PLuaGame;
 
 	
-    PLuaGame LoadGame(const char* name, const IGame* game);
+    PLuaGame LoadGame(lua_State* lua, const char* name, const IGame* game);
     void DestroyGame(PLuaGame game);
 }
 

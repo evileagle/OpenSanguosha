@@ -1,19 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="lua">
       <UniqueIdentifier>{49e78e6b-0d84-4a08-92d5-e0de8405c8fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="LuaApi">
-      <UniqueIdentifier>{e428c0e8-9743-4935-808a-f7cf4278c74d}</UniqueIdentifier>
     </Filter>
     <Filter Include="ec_common">
       <UniqueIdentifier>{f9cd39db-fab7-4b42-b422-6349d6a4637c}</UniqueIdentifier>
@@ -24,11 +17,15 @@
     <Filter Include="lua_plus">
       <UniqueIdentifier>{2b7c219d-1cb6-426b-85d7-bb85bc4552fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lua_api">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
     <None Include="ec_core.def">
-      <Filter>Source Files</Filter>
+      <Filter>ec_core</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -116,17 +113,11 @@
     <ClInclude Include="ec_core.h">
       <Filter>ec_core</Filter>
     </ClInclude>
-    <ClInclude Include="game_desc_imp.h">
-      <Filter>ec_core</Filter>
-    </ClInclude>
     <ClInclude Include="game_factory_imp.h">
       <Filter>ec_core</Filter>
     </ClInclude>
     <ClInclude Include="game_imp.h">
       <Filter>ec_core</Filter>
-    </ClInclude>
-    <ClInclude Include="lua_api\lua_game.h">
-      <Filter>LuaApi</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\ec_common\cmd.h">
       <Filter>ec_common</Filter>
@@ -146,17 +137,20 @@
     <ClInclude Include="..\..\inc\ec_core\game.h">
       <Filter>ec_core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\ec_core\game_desc.h">
-      <Filter>ec_core</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\ec_core\game_factory.h">
       <Filter>ec_core</Filter>
     </ClInclude>
+    <ClInclude Include="lua_api\lua_cards.h">
+      <Filter>lua_api</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_api\lua_game.h">
+      <Filter>lua_api</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_api\lua_game_factory.h">
+      <Filter>lua_api</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lapi.c">
       <Filter>lua</Filter>
     </ClCompile>
@@ -253,16 +247,7 @@
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lzio.c">
       <Filter>lua</Filter>
     </ClCompile>
-    <ClCompile Include="..\lua_plus\stack_frame.cpp">
-      <Filter>lua_plus</Filter>
-    </ClCompile>
-    <ClCompile Include="..\lua_plus\table.cpp">
-      <Filter>lua_plus</Filter>
-    </ClCompile>
     <ClCompile Include="ec_core.cc">
-      <Filter>ec_core</Filter>
-    </ClCompile>
-    <ClCompile Include="game_desc_imp.cc">
       <Filter>ec_core</Filter>
     </ClCompile>
     <ClCompile Include="game_factory_imp.cc">
@@ -271,8 +256,23 @@
     <ClCompile Include="game_imp.cc">
       <Filter>ec_core</Filter>
     </ClCompile>
-    <ClCompile Include="lua_api\lua_game.cpp">
-      <Filter>LuaApi</Filter>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>ec_core</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_api\lua_game_factory.cc">
+      <Filter>lua_api</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_api\lua_game.cc">
+      <Filter>lua_api</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_api\lua_cards.cc">
+      <Filter>lua_api</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lua_plus\stack_frame.cc">
+      <Filter>lua_plus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lua_plus\table.cc">
+      <Filter>lua_plus</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
