@@ -1,5 +1,5 @@
-#ifndef _EASY_CARD_IENGINE_H_
-#define _EASY_CARD_IENGINE_H_
+#ifndef _EASY_CARD_CORE_H_
+#define _EASY_CARD_CORE_H_
 
 
 namespace EasyCard

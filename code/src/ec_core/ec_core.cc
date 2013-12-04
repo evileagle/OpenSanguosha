@@ -1,4 +1,6 @@
 #include "ec_core.h"
+#include "core_define.h"
+#include "lua/lua.hpp"
 
 
 namespace EasyCard
@@ -42,10 +44,9 @@ namespace EasyCard
             s_pInstance->Initalize();
         }
         return s_pInstance;
-
     }
 
-    bool CGame::InitLua()
+    bool CECCore::InitLua()
     {
         lua_ = luaL_newstate();
         if (lua_ == NULL)
@@ -53,7 +54,14 @@ namespace EasyCard
             return false;
         }
         luaL_openlibs(lua_);
+        lua_newtable(lua_);
+        lua_setfield(lua_, LUA_REGISTRYINDEX, EC_LUA_GLOBAL_NAME);
         return true;
+    }
+
+    lua_State* CECCore::GetLua()
+    {
+        return lua_;
     }
 
 }

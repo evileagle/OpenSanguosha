@@ -1,0 +1,6 @@
+#ifndef _EASY_CARD_CORE_DEFINE_H_
+#define _EASY_CARD_CORE_DEFINE_H_
+
+#define EC_LUA_GLOBAL_NAME "EC_G"
+
+#endif

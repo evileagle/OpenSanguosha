@@ -146,9 +146,6 @@
     <ClInclude Include="lua_api\lua_game.h">
       <Filter>lua_api</Filter>
     </ClInclude>
-    <ClInclude Include="lua_api\lua_game_factory.h">
-      <Filter>lua_api</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lapi.c">
@@ -258,9 +255,6 @@
     </ClCompile>
     <ClCompile Include="dllmain.cpp">
       <Filter>ec_core</Filter>
-    </ClCompile>
-    <ClCompile Include="lua_api\lua_game_factory.cc">
-      <Filter>lua_api</Filter>
     </ClCompile>
     <ClCompile Include="lua_api\lua_game.cc">
       <Filter>lua_api</Filter>

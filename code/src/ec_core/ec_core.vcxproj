@@ -120,7 +120,6 @@
     <ClInclude Include="game_imp.h" />
     <ClInclude Include="lua_api\lua_cards.h" />
     <ClInclude Include="lua_api\lua_game.h" />
-    <ClInclude Include="lua_api\lua_game_factory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lapi.c" />
@@ -163,7 +162,6 @@
     <ClCompile Include="game_imp.cc" />
     <ClCompile Include="lua_api\lua_cards.cc" />
     <ClCompile Include="lua_api\lua_game.cc" />
-    <ClCompile Include="lua_api\lua_game_factory.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,6 +14,8 @@ namespace EasyCard
         static CECCore* GetInstace();
         bool Initalize();
         IGameFactory* GetGameFactory();
+        lua_State* GetLua();
+
     private:
         bool InitLua();
 
