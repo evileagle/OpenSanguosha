@@ -7,15 +7,17 @@
 namespace EasyCard
 {
     class CECCore;
-	class CGameFactory : public IGameFactory
+	class GameFactory : public IGameFactory
 	{
 	public:
-		CGameFactory();
-		~CGameFactory();
+		GameFactory();
+		~GameFactory();
         bool Initialize(CECCore* core);
         virtual size_t GetPredefineCount();
         virtual const IGame* CreatePredefineGame(size_t index);
+        virtual const IGame* CreateGame(GameConfig& config);
     private:
+        IGame* CreateFromeLua();
         bool LoadPredefine();
         CECCore* core_;
 

@@ -8,13 +8,16 @@ namespace EasyCard
 {
     class IGame;
     class IGameDesc;
+    class GameConfig;
 
-	class IGameFactory
-	{
-	public:
-		virtual size_t GetPredefineCount() = 0;
-		virtual const IGame* CreatePredefineGame(size_t index) = 0;
-	};
+    class IGameFactory
+    {
+    public:
+        virtual size_t GetPredefineCount() = 0;
+        virtual const IGame* CreatePredefineGame(size_t index) = 0;
+        virtual const IGame* CreateGame(GameConfig& config) = 0;
+        virtual void DeleteGame(IGame* game) = 0;
+    };
 
 }
 #endif

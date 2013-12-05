@@ -19,7 +19,7 @@ namespace EasyCard
     private:
         bool InitLua();
 
-        CGameFactory m_factory;
+        GameFactory m_factory;
         lua_State* lua_;
         static CECCore* s_pInstance;
 

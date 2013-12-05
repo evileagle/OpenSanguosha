@@ -1,10 +1,8 @@
-#include "LuaPlus/table.h"
+#include "lua_plus/table.h"
 #include <assert.h>
 
 namespace LuaPlus
 {
-
-
     table::table()
         : m_state(NULL)
         , m_index(0)

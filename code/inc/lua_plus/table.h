@@ -1,10 +1,8 @@
 #ifndef _LUA_PLUS_TABLE_H_
 #define _LUA_PLUS_TABLE_H_
 
-#include "lua/lua.h"
-#include "lua/luaconf.h"
 #include <string>
-
+#include "lua/lua.hpp"
 
 namespace LuaPlus
 {
@@ -15,6 +13,8 @@ namespace LuaPlus
         table();
         table(lua_State* state, int index);
         ~table();
+
+        static table regist_table(lua_State* lua);
 
         bool is_valid();
         lua_Unsigned get_len();

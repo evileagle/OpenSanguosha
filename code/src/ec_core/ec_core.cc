@@ -20,7 +20,7 @@ namespace EasyCard
         {
             return false;
         }
-        if (!m_factory.Initialize())
+        if (!m_factory.Initialize(this))
         {
             return false;
         }
@@ -54,8 +54,6 @@ namespace EasyCard
             return false;
         }
         luaL_openlibs(lua_);
-        lua_newtable(lua_);
-        lua_setfield(lua_, LUA_REGISTRYINDEX, EC_LUA_GLOBAL_NAME);
         return true;
     }
 
