@@ -10,6 +10,7 @@ namespace EasyCard
     typedef enum ecode
     {
         EC_SUCESS = 0,
+        EC_FAIL
     };
 
     typedef vector<void*> ptr_vector;
