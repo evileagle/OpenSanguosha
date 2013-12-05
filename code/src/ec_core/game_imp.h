@@ -6,16 +6,19 @@
 namespace EasyCard
 {
 class GameConfig;
-class CGame : public IGame
+class CECCore;
+class Game : public IGame
 {
 public:
-    CGame();
-    explicit CGame(GameConfig& config);
-    ~CGame();
+    Game();
+    explicit Game(CECCore* core);
+    Game(CECCore* core, GameConfig& config);
+    ~Game();
 
-    bool Init(GameConfig& config);
+    bool Init(CECCore* core);
+    bool Load(GameConfig& config);
 private:
-    CECCore* core;
+    CECCore* core_;
 };
 }
 
