@@ -21,6 +21,7 @@ namespace EasyCard
 
     bool GameFactory::Initialize(CECCore* core)
     {
+        assert(core != NULL);
         core_ = core;
         return true;
     }

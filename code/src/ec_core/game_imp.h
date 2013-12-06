@@ -20,6 +20,7 @@ public:
 
     bool Init(CECCore* core);
     bool Load(GameConfig& config);
+    bool Start();
     PlayerSet& GetPlayerSet();
 private:
     CECCore* core_;

@@ -4,8 +4,10 @@
 #include "ec_core.h"
 #include "core_define.h"
 
-namespace EasyCard{
+namespace EasyCard
+{
 
+#define EASY_CARD_GAME_NAME "game"
 Game::Game()
     : core_(NULL)
 {
@@ -47,7 +49,14 @@ bool Game::Load( GameConfig& config )
     {
         return false;
     }
-    luaL_dofile(lua, CURRENT_DIR PATH_DELIMITER GAME_DIR PATH_DELIMITER "game.lua");
+    luaL_dofile(lua, CURRENT_DIR PATH_DELIMITER GAME_DIR PATH_DELIMITER "main.lua");
+    if (!lua_istable(lua, -1))
+    {
+        return false;
+    }
+    lua_setfield(lua, LUA_REGISTRYINDEX, EASY_CARD_GAME_NAME);
+    // TODO pass config to main.lua
+    return true;
 }
 
 }
