@@ -2,6 +2,7 @@
 #include <assert.h>
 #include "lua/lua.hpp"
 #include "ec_core.h"
+#include "core_define.h"
 
 namespace EasyCard{
 
@@ -42,7 +43,11 @@ bool Game::Load( GameConfig& config )
         return false;
     }
     lua_State* lua = core_->GetLua();
-    luaL_dofile(lua, "./game.lua");
+    if (lua == NULL)
+    {
+        return false;
+    }
+    luaL_dofile(lua, CURRENT_DIR PATH_DELIMITER GAME_DIR PATH_DELIMITER "game.lua");
 }
 
 }

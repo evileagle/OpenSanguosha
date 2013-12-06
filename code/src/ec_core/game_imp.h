@@ -2,14 +2,17 @@
 #define _EASY_CARD_GAME_CLASS_H_
 
 #include "ec_core/game.h"
+#include "ec_common/container.h"
 
 namespace EasyCard
 {
 class GameConfig;
 class CECCore;
+class IPlayer;
 class Game : public IGame
 {
 public:
+    typedef Container<IPlayer*> PlayerSet;
     Game();
     explicit Game(CECCore* core);
     Game(CECCore* core, GameConfig& config);
@@ -17,8 +20,10 @@ public:
 
     bool Init(CECCore* core);
     bool Load(GameConfig& config);
+    PlayerSet& GetPlayerSet();
 private:
     CECCore* core_;
+    PlayerSet players;
 };
 }
 

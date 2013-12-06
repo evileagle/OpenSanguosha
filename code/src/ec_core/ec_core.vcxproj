@@ -108,13 +108,15 @@
     <ClInclude Include="..\..\3rd\lua-5.2.2\src\lzio.h" />
     <ClInclude Include="..\..\inc\ec_common\cmd.h" />
     <ClInclude Include="..\..\inc\ec_common\cmdparser.h" />
-    <ClInclude Include="..\..\inc\ec_common\Iterator.h" />
     <ClInclude Include="..\..\inc\ec_common\type_def.h" />
     <ClInclude Include="..\..\inc\ec_core\core.h" />
     <ClInclude Include="..\..\inc\ec_core\game.h" />
     <ClInclude Include="..\..\inc\ec_core\game_factory.h" />
+    <ClInclude Include="..\..\inc\ec_core\player.h" />
+    <ClInclude Include="..\..\inc\ec_core\player_factory.h" />
     <ClInclude Include="..\..\inc\lua_plus\stack_frame.h" />
     <ClInclude Include="..\..\inc\lua_plus\table.h" />
+    <ClInclude Include="core_define.h" />
     <ClInclude Include="ec_core.h" />
     <ClInclude Include="game_factory_imp.h" />
     <ClInclude Include="game_imp.h" />

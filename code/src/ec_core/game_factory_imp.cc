@@ -34,7 +34,7 @@ namespace EasyCard
             return false;
         }
         stack_frame sf(lua);
-        luaL_dofile(lua, CURRENT_DIR CONFIG_DIR "predefine.cfg");
+        luaL_dofile(lua, CURRENT_DIR PATH_DELIMITER GAME_DIR PATH_DELIMITER "predefine.cfg");
         if (!lua_istable(lua, -1))
         {
             return false;

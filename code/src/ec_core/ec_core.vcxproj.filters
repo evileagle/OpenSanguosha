@@ -125,9 +125,6 @@
     <ClInclude Include="..\..\inc\ec_common\cmdparser.h">
       <Filter>ec_common</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\ec_common\Iterator.h">
-      <Filter>ec_common</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\ec_common\type_def.h">
       <Filter>ec_common</Filter>
     </ClInclude>
@@ -145,6 +142,15 @@
     </ClInclude>
     <ClInclude Include="lua_api\lua_game.h">
       <Filter>lua_api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_core\player.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_core\player_factory.h">
+      <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="core_define.h">
+      <Filter>ec_core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
