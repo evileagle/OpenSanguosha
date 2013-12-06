@@ -3,17 +3,20 @@
 
 struct lua_State;
 
-namespace EasyCard
-{
-    class IGame;
-	typedef struct LuaGame
-	{
-		const IGame* game;
-	}*PLuaGame;
+namespace EasyCard{
 
-	
-    PLuaGame LoadGame(lua_State* lua, const char* name, const IGame* game);
-    void DestroyGame(PLuaGame game);
+class IGame;
+
+namespace LuaApi{
+
+namespace Game{
+
+bool Create(lua_State* lua);
+bool Set(lua_State* lua, const IGame* game);
+void Destroy(lua_State* lua);
+
+}
+}
 }
 
 #endif

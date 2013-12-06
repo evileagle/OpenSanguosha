@@ -1,4 +1,5 @@
 #include "ec_core.h"
+#include <assert.h>
 #include "core_define.h"
 #include "lua/lua.hpp"
 
@@ -59,6 +60,7 @@ namespace EasyCard
 
     lua_State* CECCore::GetLua()
     {
+        assert(lua_ != NULL);
         return lua_;
     }
 
