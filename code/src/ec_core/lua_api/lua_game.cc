@@ -1,5 +1,6 @@
 #include "lua_game.h"
 #include "lua/lua.hpp"
+#include "lua_player_data.h"
 
 namespace EasyCard{
 namespace LuaApi{
@@ -12,7 +13,23 @@ typedef struct LuaGame
 
 const char* METATABLE = "game_magic";
 const char* NAME = "game";
-luaL_Reg game_funcs = {};
+
+// TODO 
+// getuserdata
+
+int GetPlayerData(lua_State* lua)
+{
+    if (!lua_isnumber(lua, -1))
+    {
+        return 0;
+    }
+    lua_Unsigned index = lua_tounsigned(lua, -1);
+    return PlayerData::Get(lua, index);
+}
+
+luaL_Reg game_funcs = {
+    "getplayer", GetPlayerData
+};
 
 bool CreateMetaTable(lua_State* lua)
 {

@@ -4,25 +4,25 @@
 namespace EasyCard
 {
 
-    template<typename T>
-    class Container
+template<typename T>
+class Container
+{
+public:
+    class Iterator
     {
     public:
-        class Iterator
-        {
-        public:
-            T& Get();
-            bool HasNext();
-            void Next();
-        };
-        Iterator First();
-        Iterator Last();
-        void Add(T& item);
-        void Remove(Iterator& iter);
-        void Random();
-        bool TryLock();
-        void Unlock();
+        T& Get();
+        bool HasNext();
+        void Next();
     };
+    Iterator First();
+    Iterator Last();
+    void Add(T& item);
+    void Remove(Iterator& iter);
+    bool TryLock();
+    void Unlock();
+    T& Get(size_t index);
+};
 }
 
 #endif

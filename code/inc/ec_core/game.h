@@ -6,7 +6,6 @@ namespace EasyCard
 	class IGame
 	{
 	public:
-		virtual const char* GetName() = 0;
 	};
 }
 #endif

@@ -137,9 +137,6 @@
     <ClInclude Include="..\..\inc\ec_core\game_factory.h">
       <Filter>ec_core</Filter>
     </ClInclude>
-    <ClInclude Include="lua_api\lua_cards.h">
-      <Filter>lua_api</Filter>
-    </ClInclude>
     <ClInclude Include="lua_api\lua_game.h">
       <Filter>lua_api</Filter>
     </ClInclude>
@@ -151,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="core_define.h">
       <Filter>ec_core</Filter>
+    </ClInclude>
+    <ClInclude Include="lua_api\lua_player_data.h">
+      <Filter>lua_api</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -265,14 +265,14 @@
     <ClCompile Include="lua_api\lua_game.cc">
       <Filter>lua_api</Filter>
     </ClCompile>
-    <ClCompile Include="lua_api\lua_cards.cc">
-      <Filter>lua_api</Filter>
-    </ClCompile>
     <ClCompile Include="..\lua_plus\stack_frame.cc">
       <Filter>lua_plus</Filter>
     </ClCompile>
     <ClCompile Include="..\lua_plus\table.cc">
       <Filter>lua_plus</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_api\lua_player_data.cc">
+      <Filter>lua_api</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

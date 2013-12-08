@@ -3,11 +3,13 @@
 #include "lua/lua.hpp"
 #include "ec_core.h"
 #include "core_define.h"
+#include "lua_api/lua_game.h"
+#include "lua_plus/stack_frame.h"
 
-namespace EasyCard
-{
-
+namespace EasyCard{
+using namespace LuaPlus;
 #define EASY_CARD_GAME_NAME "game"
+#define EASY_CARD_PLAYER_DATA "player_data"
 Game::Game()
     : core_(NULL)
 {
@@ -49,14 +51,39 @@ bool Game::Load( GameConfig& config )
     {
         return false;
     }
+    LuaApi::Game::Create(lua);
+    LuaApi::Game::Set(lua, this);
+    stack_frame sf(lua);
     luaL_dofile(lua, CURRENT_DIR PATH_DELIMITER GAME_DIR PATH_DELIMITER "main.lua");
     if (!lua_istable(lua, -1))
     {
         return false;
     }
+    lua_pushvalue(lua , -1);
     lua_setfield(lua, LUA_REGISTRYINDEX, EASY_CARD_GAME_NAME);
+    lua_getfield(lua, -1, "init");
+    if (!lua_isfunction(lua, -1))
+    {
+        return false;
+    }
     // TODO pass config to main.lua
-    return true;
+    lua_newtable(lua);
+    lua_call(lua, 1, 1);
+    if (!lua_isboolean(lua, -1))
+    {
+        return false;
+    }
+    return lua_toboolean(lua, -1);
+}
+
+bool Game::Start()
+{
+    assert(core_ != NULL);
+    if (core_ == NULL)
+    {
+        return false;
+    }
+
 }
 
 }

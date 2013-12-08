@@ -5,7 +5,7 @@
 #include "lua_plus/table.h"
 #include "ec_core.h"
 #include "core_define.h"
-#include "lua_api/lua_game.h"
+#include "game_imp.h"
 
 namespace EasyCard
 {
@@ -24,7 +24,7 @@ namespace EasyCard
     {
         assert(core != NULL);
         core_ = core;
-        return CreateLuaGame(core_->GetLua());
+        return true;
     }
 
     bool GameFactory::LoadPredefine()
@@ -113,6 +113,11 @@ namespace EasyCard
         }
 
         return CreateGame(config);
+    }
+
+    const IGame* GameFactory::CreateGame( GameConfig& config )
+    {
+        Game* game = new Game(core_, config);
     }
 
 }
