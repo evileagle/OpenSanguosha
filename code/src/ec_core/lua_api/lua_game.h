@@ -5,17 +5,13 @@ struct lua_State;
 
 namespace EasyCard{
 
-class IGame;
+class Game;
 
 namespace LuaApi{
 
-namespace Game{
+bool CreateLuaGame(lua_State* lua, const Game* game);
+void DestroyLuaGame(lua_State* lua);
 
-bool Create(lua_State* lua);
-bool Set(lua_State* lua, const IGame* game);
-void Destroy(lua_State* lua);
-
-}
 }
 }
 

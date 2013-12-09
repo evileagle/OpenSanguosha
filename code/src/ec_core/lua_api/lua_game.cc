@@ -1,35 +1,24 @@
 #include "lua_game.h"
 #include "lua/lua.hpp"
-#include "lua_player_data.h"
+#include "lua_player_prop.h"
 
 namespace EasyCard{
 namespace LuaApi{
-namespace Game{
 
 typedef struct LuaGame
 {
-    const IGame* game;
+    const Game* game;
 }*PLuaGame;
 
 const char* METATABLE = "game_magic";
 const char* NAME = "game";
 
-// TODO 
-// getuserdata
 
-int GetPlayerData(lua_State* lua)
-{
-    if (!lua_isnumber(lua, -1))
-    {
-        return 0;
-    }
-    lua_Unsigned index = lua_tounsigned(lua, -1);
-    return PlayerData::Get(lua, index);
-}
-
-luaL_Reg game_funcs = {
-    "getplayer", GetPlayerData
+luaL_Reg game_funcs[] = {
+    {"get_prop", GetPlayerProp},
+    {"set_prop", SetPlayerProp}
 };
+
 
 bool CreateMetaTable(lua_State* lua)
 {
@@ -40,11 +29,11 @@ bool CreateMetaTable(lua_State* lua)
     lua_setfield(lua, -2, "__index");
     // metatable = {funcs};
     lua_pushvalue(lua, -1);
-    luaL_setfuncs(lua, &game_funcs, 0);
+    luaL_setfuncs(lua, game_funcs, 0);
     return true;
 }
 
-bool Create(lua_State* lua)
+bool CreateLuaGame(lua_State* lua, const Game* game)
 {
     // push userdata +1
     lua_newuserdata(lua, sizeof(LuaGame));
@@ -62,29 +51,17 @@ bool Create(lua_State* lua)
     lua_pushvalue(lua, -1);
     lua_setglobal(lua, NAME);
     PLuaGame lua_game = (PLuaGame)lua_touserdata(lua, -1);
-    lua_game->game = NULL;
+    lua_game->game = game;
     lua_pop(lua, 1);
     return true;
 }
 
-bool Set( lua_State* lua, const IGame* game )
+void DestroyLuaGame( lua_State* lua )
 {
-    lua_getglobal(lua, NAME);
-    PLuaGame lua_game = (PLuaGame)luaL_testudata(lua, -1, METATABLE);
-    if (lua_game == NULL)
-    {
-        return false;
-    }
-    lua_game->game = game;
-    return true;
-}
-
-void Destroy( lua_State* lua )
-{
+    DisposePlayerProp(lua);
     lua_pushnil(lua);
     lua_setglobal(lua, NAME);
 }
 
-}
 }
 }

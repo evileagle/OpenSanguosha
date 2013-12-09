@@ -6,6 +6,7 @@ namespace EasyCard
 	class IGame
 	{
 	public:
+        virtual 
 	};
 }
 #endif
