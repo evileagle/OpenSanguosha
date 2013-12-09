@@ -51,8 +51,7 @@ bool Game::Load( GameConfig& config )
     {
         return false;
     }
-    LuaApi::Game::Create(lua);
-    LuaApi::Game::Set(lua, this);
+    LuaApi::CreateLuaGame(lua, this);
     stack_frame sf(lua);
     luaL_dofile(lua, CURRENT_DIR PATH_DELIMITER GAME_DIR PATH_DELIMITER "main.lua");
     if (!lua_istable(lua, -1))

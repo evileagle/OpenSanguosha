@@ -11,7 +11,7 @@ typedef struct LuaGame
 }*PLuaGame;
 
 const char* METATABLE = "game_magic";
-const char* NAME = "game";
+const char* GAME_NAME = "game";
 
 
 luaL_Reg game_funcs[] = {
@@ -49,7 +49,7 @@ bool CreateLuaGame(lua_State* lua, const Game* game)
 
     // set to global
     lua_pushvalue(lua, -1);
-    lua_setglobal(lua, NAME);
+    lua_setglobal(lua, GAME_NAME);
     PLuaGame lua_game = (PLuaGame)lua_touserdata(lua, -1);
     lua_game->game = game;
     lua_pop(lua, 1);
@@ -60,7 +60,12 @@ void DestroyLuaGame( lua_State* lua )
 {
     DisposePlayerProp(lua);
     lua_pushnil(lua);
-    lua_setglobal(lua, NAME);
+    lua_setglobal(lua, GAME_NAME);
+}
+
+void GetLuaGame( lua_State* lua )
+{
+    lua_getfield(lua, LUA_REGISTRYINDEX, GAME_NAME);
 }
 
 }
