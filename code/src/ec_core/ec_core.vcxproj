@@ -50,7 +50,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;OPENSANGUOSHA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd/lua-5.2.2/inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/lua-5.2.2/inc;./</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -66,7 +66,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OPENSANGUOSHA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd/lua-5.2.2/inc</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/lua-5.2.2/inc;./</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -123,6 +123,7 @@
     <ClInclude Include="lua_api\lua_game.h" />
     <ClInclude Include="lua_api\lua_player_prop.h" />
     <ClInclude Include="lua_loader\main_loader.h" />
+    <ClInclude Include="lua_loader\round_loader.h" />
     <ClInclude Include="round_loop.h" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +168,7 @@
     <ClCompile Include="lua_api\lua_game.cc" />
     <ClCompile Include="lua_api\lua_player_prop.cc" />
     <ClCompile Include="lua_loader\main_loader.cc" />
+    <ClCompile Include="lua_loader\round_loader.cc" />
     <ClCompile Include="round_loop.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

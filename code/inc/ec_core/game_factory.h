@@ -16,7 +16,6 @@ namespace EasyCard
         virtual size_t GetPredefineCount() = 0;
         virtual const IGame* CreatePredefineGame(size_t index) = 0;
         virtual const IGame* CreateGame(GameConfig& config) = 0;
-        virtual void DeleteGame(IGame* game) = 0;
     };
 
 }

@@ -1,5 +1,5 @@
-#ifndef _EASY_CARD_LUA_API_PLAYER_DATA_H_
-#define _EASY_CARD_LUA_API_PLAYER_DATA_H_
+#ifndef _EASY_CARD_LUA_API_PLAYER_PROP_H_
+#define _EASY_CARD_LUA_API_PLAYER_PROP_H_
 
 struct lua_State;
 
