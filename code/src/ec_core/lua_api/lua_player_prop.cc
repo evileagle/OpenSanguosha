@@ -25,10 +25,15 @@ bool InitPlayerProp(lua_State* lua, size_t number)
     return true;
 }
 
+size_t PlayerToPropIndex(size_t index)
+{
+    return index+1;
+}
+
 int GetPlayerProp( lua_State *lua)
 {
-    lua_Unsigned index = luaL_checkunsigned(lua, 1);
-    const char* key = luaL_checkstring(lua, 2);
+    lua_Unsigned index = PlayerToPropIndex(lua_tounsigned(lua, 1));
+    const char* key = lua_tostring(lua, 2);
     
     // prop = game.player_prop
     GetLuaGame(lua);
@@ -45,9 +50,8 @@ int GetPlayerProp( lua_State *lua)
 
 int SetPlayerProp( lua_State *lua )
 {
-
-    lua_Unsigned index = luaL_checkunsigned(lua, 1);
-    const char* key = luaL_checkstring(lua, 2);
+    lua_Unsigned index = PlayerToPropIndex(lua_tounsigned(lua, 1));
+    const char* key = lua_tostring(lua, 2);
 
     GetLuaGame(lua);
     lua_getuservalue(lua, -1);

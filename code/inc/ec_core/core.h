@@ -8,7 +8,9 @@ namespace EasyCard
 
     class ICore
     {
-		virtual IGameFactory* GetGameFactory() = 0;
+    public:
+        virtual IGameFactory* GetGameFactory() = 0;
+        virtual void Dispose() = 0;
     };
 }
 #endif

@@ -8,8 +8,10 @@
 
 namespace EasyCard{
 using namespace LuaPlus;
+
 #define EASY_CARD_GAME_NAME "game"
 #define EASY_CARD_PLAYER_DATA "player_data"
+
 Game::Game()
     : core_(NULL)
 {
@@ -82,7 +84,12 @@ bool Game::Start()
     {
         return false;
     }
+    return true;
+}
 
+bool Game::GetMain()
+{
+    return true;
 }
 
 }

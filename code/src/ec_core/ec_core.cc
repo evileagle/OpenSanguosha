@@ -64,4 +64,18 @@ namespace EasyCard
         return lua_;
     }
 
+    void CECCore::Dispose()
+    {
+        DeleteLua();
+    }
+
+    void CECCore::DeleteLua()
+    {
+        if (lua_ != NULL)
+        {
+            lua_close(lua_);
+            lua_ = NULL;
+        }
+    }
+
 }

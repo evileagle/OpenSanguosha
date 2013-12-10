@@ -22,7 +22,9 @@ public:
     bool TryLock();
     void Unlock();
     T& Get(size_t index);
+    size_t Count();
 };
+
 }
 
 #endif

@@ -15,9 +15,11 @@ namespace EasyCard
         bool Initalize();
         IGameFactory* GetGameFactory();
         lua_State* GetLua();
+        void Dispose();
 
     private:
         bool InitLua();
+        void DeleteLua();
 
         GameFactory m_factory;
         lua_State* lua_;

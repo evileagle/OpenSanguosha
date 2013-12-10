@@ -21,6 +21,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="lua_loader">
+      <UniqueIdentifier>{f12a6b61-cfcc-458e-bf3c-2258962afd3b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -155,6 +158,9 @@
     <ClInclude Include="lua_api\lua_player_prop.h">
       <Filter>lua_api</Filter>
     </ClInclude>
+    <ClInclude Include="lua_loader\main_loader.h">
+      <Filter>lua_loader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lapi.c">
@@ -279,6 +285,9 @@
     </ClCompile>
     <ClCompile Include="lua_api\lua_player_prop.cc">
       <Filter>lua_api</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_loader\main_loader.cc">
+      <Filter>lua_loader</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
