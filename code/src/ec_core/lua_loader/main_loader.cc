@@ -10,24 +10,29 @@ namespace EasyCard{
 
 using namespace LuaPlus;
 
-#define EASY_CARD_GAME_NAME "game"
+#define EASY_CARD_GAME_NAME "main"
 #define EASY_CARD_PLAYER_DATA "player_data"
+
 namespace LuaLoader{
+
 bool LoadMain( lua_State* lua)
 {
+    assert(lua != NULL);
     stack_frame sf(lua);
-    luaL_dofile(lua, CURRENT_DIR PATH_DELIMITER GAME_DIR PATH_DELIMITER "main.lua");
+    luaL_loadfile(lua, CURRENT_DIR PATH_DELIMITER GAME_DIR PATH_DELIMITER "main.lua");
+    lua_pcall(lua, 0, 1, 0);
     if (!lua_istable(lua, -1))
     {
         return false;
     }
-    lua_pushvalue(lua , -1);
     lua_setfield(lua, LUA_REGISTRYINDEX, EASY_CARD_GAME_NAME);
     return true;
 }
 
 bool CallInit( lua_State* lua, GameConfig& config )
 {
+    assert(lua != NULL);
+    stack_frame sf(lua);
     GetMain(lua);
     lua_getfield(lua, -1, "init");
     if (!lua_isfunction(lua, -1))
@@ -46,8 +51,26 @@ bool CallInit( lua_State* lua, GameConfig& config )
 
 bool GetMain( lua_State* lua )
 {
+    assert(lua != NULL);
     lua_getfield(lua, LUA_REGISTRYINDEX, EASY_CARD_GAME_NAME);
     return lua_istable(lua, -1);
+}
+
+bool CallStart( lua_State* lua )
+{
+    assert(lua != NULL);
+    stack_frame sf(lua);
+    if (!GetMain(lua))
+    {
+        return false;
+    }
+    lua_getfield(lua, -1, "start");
+    if (!lua_isfunction(lua, -1))
+    {
+        return false;
+    }
+    lua_pcall(lua, 0, 0, 0);
+    return true;
 }
 
 }

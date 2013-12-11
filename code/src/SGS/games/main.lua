@@ -1,15 +1,22 @@
 
 local round = {
-	function do()
+    function do()
 
-	end
+    end
 };
 
 local game = {
-	function init(config)
-	
+    function init(config)
+
+    end
+
+	function start()
+
 	end
-	round = round;
+
+    function on(event)
+        -- body
+    end
 };
 
 
