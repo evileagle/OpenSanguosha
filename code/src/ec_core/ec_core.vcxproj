@@ -122,6 +122,7 @@
     <ClInclude Include="game_imp.h" />
     <ClInclude Include="lua_api\lua_game.h" />
     <ClInclude Include="lua_api\lua_player_prop.h" />
+    <ClInclude Include="lua_api\lua_round_loop.h" />
     <ClInclude Include="lua_loader\main_loader.h" />
     <ClInclude Include="lua_loader\round_loader.h" />
     <ClInclude Include="round_loop.h" />
@@ -167,6 +168,7 @@
     <ClCompile Include="game_imp.cc" />
     <ClCompile Include="lua_api\lua_game.cc" />
     <ClCompile Include="lua_api\lua_player_prop.cc" />
+    <ClCompile Include="lua_api\lua_round_loop.cc" />
     <ClCompile Include="lua_loader\main_loader.cc" />
     <ClCompile Include="lua_loader\round_loader.cc" />
     <ClCompile Include="round_loop.cc" />

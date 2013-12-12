@@ -1,4 +1,5 @@
 #include "main_loader.h"
+#include <assert.h>
 #include <string>
 #include "lua/lua.hpp"
 #include "lua_plus/stack_frame.h"

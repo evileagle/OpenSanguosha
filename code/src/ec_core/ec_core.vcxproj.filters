@@ -164,6 +164,9 @@
     <ClInclude Include="lua_loader\round_loader.h">
       <Filter>lua_loader</Filter>
     </ClInclude>
+    <ClInclude Include="lua_api\lua_round_loop.h">
+      <Filter>lua_api</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rd\lua-5.2.2\src\lapi.c">
@@ -294,6 +297,9 @@
     </ClCompile>
     <ClCompile Include="lua_loader\round_loader.cc">
       <Filter>lua_loader</Filter>
+    </ClCompile>
+    <ClCompile Include="lua_api\lua_round_loop.cc">
+      <Filter>lua_api</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -5,18 +5,16 @@
 namespace EasyCard{
 namespace LuaApi{
 
-typedef struct LuaGame
-{
-    const Game* game;
-}*PLuaGame;
-
 const char* METATABLE = "game_magic";
 const char* GAME_NAME = "game";
 
 
 luaL_Reg game_funcs[] = {
     {"get_prop", GetPlayerProp},
-    {"set_prop", SetPlayerProp}
+    {"set_prop", SetPlayerProp},
+    {"add_round", AddRound},
+    {"start_loop", StartLoop},
+    {"current_player", GetCurrentPlayer},
 };
 
 
@@ -50,6 +48,8 @@ bool CreateLuaGame(lua_State* lua, const Game* game)
     // set to global
     lua_pushvalue(lua, -1);
     lua_setglobal(lua, GAME_NAME);
+    lua_newtable(lua);
+    lua_setuservalue(lua, -1);
     PLuaGame lua_game = (PLuaGame)lua_touserdata(lua, -1);
     lua_game->game = game;
     lua_pop(lua, 1);
@@ -63,9 +63,34 @@ void DestroyLuaGame( lua_State* lua )
     lua_setglobal(lua, GAME_NAME);
 }
 
-void GetLuaGame( lua_State* lua )
+PLuaGame GetLuaGame( lua_State* lua )
 {
     lua_getfield(lua, LUA_REGISTRYINDEX, GAME_NAME);
+    if (!lua_isuserdata(lua, -1))
+    {
+        lua_pop(lua, 1);
+        return NULL;
+    }
+    lua_getuservalue(lua, -1);
+    if (!lua_istable(lua, -1))
+    {
+        lua_pop(lua, 1);
+        return NULL;
+    }
+    return (PLuaGame)lua_touserdata(lua, -1);
+}
+
+bool GetGameTable( lua_State* lua )
+{
+    lua_getfield(lua, LUA_REGISTRYINDEX, GAME_NAME);
+    if (!lua_isuserdata(lua, -1))
+    {
+        lua_pop(lua, 1);
+        return false;
+    }
+    lua_getuservalue(lua, -1);
+    lua_remove(lua, -2);
+    return lua_istable(lua, -1);
 }
 
 }

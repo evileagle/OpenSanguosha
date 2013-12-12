@@ -11,7 +11,10 @@ const char* PROP_NAME = "player_prop";
 bool InitPlayerProp(lua_State* lua, size_t number)
 {
     assert(lua != NULL);
-    GetLuaGame(lua);
+    if (!GetGameTable(lua))
+    {
+        return false;
+    }
 
     lua_newtable(lua);
     for (size_t i=1; i<number; ++i)
@@ -21,7 +24,8 @@ bool InitPlayerProp(lua_State* lua, size_t number)
         lua_settable(lua, -3);
     }
 
-    lua_setuservalue(lua, -2);
+    lua_setfield(lua, -2, PROP_NAME);
+    lua_pop(lua, 1);
     return true;
 }
 
@@ -36,9 +40,11 @@ int GetPlayerProp( lua_State *lua)
     const char* key = lua_tostring(lua, 2);
     
     // prop = game.player_prop
-    GetLuaGame(lua);
-    lua_getuservalue(lua, -1);
-
+    if (!GetGameTable(lua))
+    {
+        return false;
+    }
+    lua_getfield(lua, -1, PROP_NAME);
     // player_prop = prop[index];
     lua_pushunsigned(lua, index);
     lua_gettable(lua, -2);
@@ -53,9 +59,11 @@ int SetPlayerProp( lua_State *lua )
     lua_Unsigned index = PlayerToPropIndex(lua_tounsigned(lua, 1));
     const char* key = lua_tostring(lua, 2);
 
-    GetLuaGame(lua);
-    lua_getuservalue(lua, -1);
-
+    if (!GetGameTable(lua))
+    {
+        return false;
+    }
+    lua_getfield(lua, -1, PROP_NAME);
     lua_pushunsigned(lua, index);
     lua_gettable(lua, -2);
 

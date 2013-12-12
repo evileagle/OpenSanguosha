@@ -23,7 +23,7 @@ public:
     bool Init(CECCore* core);
     bool Load(GameConfig& config);
     bool Start();
-    bool GetMain();
+    RoundLoop& GetRoundLoop();
     PlayerSet& GetPlayerSet();
 private:
     CECCore* core_;

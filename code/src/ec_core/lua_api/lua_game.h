@@ -9,9 +9,15 @@ class Game;
 
 namespace LuaApi{
 
+typedef struct LuaGame
+{
+    Game* game;
+}*PLuaGame;
+
 bool CreateLuaGame(lua_State* lua, const Game* game);
 void DestroyLuaGame(lua_State* lua);
-void GetLuaGame(lua_State* lua);
+bool GetGameTable(lua_State* lua);
+PLuaGame GetLuaGame(lua_State* lua);
 
 }
 }
