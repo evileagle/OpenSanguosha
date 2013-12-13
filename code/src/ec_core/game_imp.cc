@@ -60,4 +60,10 @@ bool Game::Start()
     return LuaLoader::CallStart(core_->GetLua());
 }
 
+CECCore* Game::GetCore()
+{
+    assert(core_ != NULL);
+    return core_;
+}
+
 }

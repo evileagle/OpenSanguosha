@@ -9,7 +9,7 @@ namespace EasyCard{
 namespace LuaLoader{
 using namespace LuaPlus;
 
-const char* ROUND_NAME "round";
+const char* ROUND_NAME = "round";
 
 bool LoadRound( lua_State* lua )
 {
@@ -47,6 +47,13 @@ bool GetRound( lua_State* lua )
     assert(lua != NULL);
     lua_getfield(lua, LUA_REGISTRYINDEX, ROUND_NAME);
     return lua_istable(lua, -1);
+}
+
+void DisposeRound( lua_State* lua )
+{
+    assert(lua != NULL);
+    lua_pushnil(lua);
+    lua_setfield(lua, LUA_REGISTRYINDEX, ROUND_NAME);
 }
 
 }

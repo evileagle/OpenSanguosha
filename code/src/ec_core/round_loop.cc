@@ -2,9 +2,11 @@
 #include <assert.h>
 #include "ec_common/type_def.h"
 #include "game_imp.h"
+#include "lua_loader/round_loader.h"
+#include "ec_core.h"
 
 namespace EasyCard{
-
+using namespace LuaLoader;
 const size_t RoundLoop::ROUND_BEGIN = 0;
 const size_t RoundLoop::ROUND_END = -1;
 
@@ -24,6 +26,7 @@ bool RoundLoop::Init( Game* game )
 {
     assert(game != NULL);
     game_ = game;
+    LoadRound(CECCore::GetInstace()->GetLua());
     return true;
 }
 
@@ -48,6 +51,37 @@ void RoundLoop::AddRound(size_t index, size_t pos, bool temp)
     {
         round_queue_.push_back(round);
     }
+}
+
+void RoundLoop::Start()
+{
+    bool next = true;
+    while (next)
+    {
+        Round* round = (Round*)round_queue_.front();
+        round_queue_.pop_front();
+        current_ = round;
+        next = CallRound(CECCore::GetInstace()->GetLua());
+        current_ = NULL;
+        if (round->temp_)
+        {
+            delete round;
+            continue;
+        }
+        round_queue_.push_back(round);
+    }
+}
+
+void RoundLoop::Dispose()
+{
+    DisposeRound(CECCore::GetInstace()->GetLua());
+    while (!round_queue_.empty())
+    {
+        Round* round = (Round*)round_queue_.front();
+        round_queue_.pop_front();
+        delete round;
+    }
+    assert(current_ == NULL);
 }
 
 }
