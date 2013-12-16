@@ -1,10 +1,4 @@
 
-local round = {
-    function do()
-
-    end
-};
-
 local game = {
     function init(config)
 
@@ -20,4 +14,4 @@ local game = {
 };
 
 
-return;
+return game;

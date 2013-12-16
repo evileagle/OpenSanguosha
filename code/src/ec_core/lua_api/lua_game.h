@@ -1,5 +1,5 @@
-#ifndef _EASY_CARD_LUAGMAE_H_
-#define _EASY_CARD_LUAGMAE_H_
+#ifndef _EASY_CARD_LUA_API_GMAE_H_
+#define _EASY_CARD_LUA_API_GMAE_H_
 
 struct lua_State;
 

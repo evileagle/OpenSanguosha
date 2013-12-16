@@ -20,78 +20,46 @@ namespace LuaPlus
         lua_Unsigned get_len();
 
         template<typename T>
-        bool get_value(T index, string& value)
+        bool get_string(T index)
         {
-            if (!get_value(index))
-            {
-                return false;
-            }
-            if (!lua_isstring(m_state, -1))
-            {
-                return false;
-            }
-            value = lua_tostring(m_state, -1);
-            return true;
+            return get_value(index, lua_isstring);
         }
 
         template<typename T>
-        bool get_value(T index, lua_Integer& value)
+        bool get_integer(T index)
         {
-            if (!get_value(index))
-            {
-                return false;
-            }
-            if (!lua_isnumber(m_state, -1))
-            {
-                return false;
-            }
-            value = lua_tointeger(m_state, -1);
-            return true;
+            return get_value(index, lua_isnumber);
         }
 
         template<typename T>
-        bool get_value(T index, lua_Number& value)
+        bool get_number(T index)
         {
-            if (!get_value(index))
-            {
-                return false;
-            }
-            if (!lua_isnumber(m_state, -1))
-            {
-                return false;
-            }
-            value = lua_tonumber(m_state, -1);
-            return true;
+            return get_value(index, lua_isnumber);
         }
 
         template<typename T>
-        bool get_value(T index, lua_Unsigned& value)
+        bool get_unsigned(T index)
         {
-            if (!get_value(index))
-            {
-                return false;
-            }
-            if (!lua_isnumber(m_state, -1))
-            {
-                return false;
-            }
-            value = lua_tounsigned(m_state, -1);
-            return true;
+            return get_value(index, lua_isnumber);
         }
 
         template<typename T>
-        bool get_value(T index, table& value)
+        bool get_table(T index)
         {
-            if (!get_value(index))
-            {
-                return false;
-            }
-            return value.init(m_state, -1);
+            return get_value(index, lua_istable);
+        }
+
+        template<typename T>
+        bool get_function(T index)
+        {
+            return get_value(index, lua_isfunction);
         }
 
     private:
-        bool get_value(lua_Unsigned index);
-        bool get_value(const char* szName);
+        template <typename T>
+        bool get_value(lua_Unsigned index, T& check);
+        template <typename T>
+        bool get_value(const char* szName, T& check);
         bool init(lua_State* state, int index);
         lua_State* m_state;
         int m_index;

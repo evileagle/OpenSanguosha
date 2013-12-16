@@ -35,26 +35,33 @@ bool CallInit( lua_State* lua, GameConfig& config )
     assert(lua != NULL);
     stack_frame sf(lua);
     GetMain(lua);
-    lua_getfield(lua, -1, "init");
-    if (!lua_isfunction(lua, -1))
+    table game_main(lua, -1);
+    if (!game_main.get_function("init"))
     {
         return false;
     }
     // TODO pass config to main.lua
     lua_newtable(lua);
     lua_call(lua, 1, 1);
-    if (!lua_isboolean(lua, -1))
+    bool success = false;
+    if (lua_isboolean(lua, -1))
     {
-        return false;
+        success = lua_toboolean(lua, -1);
     }
-    return lua_toboolean(lua, -1);
+    lua_pop(lua, 1);
+    return success;
 }
 
 bool GetMain( lua_State* lua )
 {
     assert(lua != NULL);
     lua_getfield(lua, LUA_REGISTRYINDEX, EASY_CARD_GAME_NAME);
-    return lua_istable(lua, -1);
+    bool success = lua_istable(lua, -1);
+    if (!success)
+    {
+        lua_pop(lua, 1);
+    }
+    return success;
 }
 
 bool CallStart( lua_State* lua )
@@ -65,12 +72,30 @@ bool CallStart( lua_State* lua )
     {
         return false;
     }
-    lua_getfield(lua, -1, "start");
-    if (!lua_isfunction(lua, -1))
+    table game_main(lua, -1);
+    if (!game_main.get_function("start"))
     {
         return false;
     }
     lua_pcall(lua, 0, 0, 0);
+    return true;
+}
+
+bool CallOnEvent( lua_State* lua )
+{
+    assert(lua != NULL);
+    stack_frame sf(lua);
+    if (!GetMain(lua))
+    {
+        return false;
+    }
+    table game_main(lua, -1);
+    if (!game_main.get_function("on"))
+    {
+        return false;
+    }
+    lua_pushvalue(lua, -3);
+    lua_pcall(lua, 1, 0, 0);
     return true;
 }
 

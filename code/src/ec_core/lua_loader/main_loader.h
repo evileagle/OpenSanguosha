@@ -11,6 +11,7 @@ namespace LuaLoader{
     bool LoadMain(lua_State* lua);
     bool CallInit(lua_State* lua, GameConfig& config);
     bool CallStart(lua_State* lua);
+    bool CallOnEvent(lua_State* lua);
     bool GetMain(lua_State* lua);
 }
 }

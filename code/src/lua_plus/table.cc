@@ -29,7 +29,7 @@ namespace LuaPlus
         }
         m_state = state;
         m_index = lua_absindex( state, index);
-        return true
+        return true;
     }
 
     bool table::is_valid()
@@ -43,7 +43,8 @@ namespace LuaPlus
         return lua_tounsigned(m_state, -1);
     }
 
-    bool table::get_value( lua_Unsigned index )
+    template <typename T>
+    bool table::get_value( lua_Unsigned index, T& check )
     {
         assert(is_valid());
         if (!is_valid())
@@ -52,10 +53,16 @@ namespace LuaPlus
         }
         lua_pushunsigned(m_state, index);
         lua_gettable(m_state, m_index);
+        if (!check(lua, -1))
+        {
+            lua_pop(lua, 1);
+            return false;
+        }
         return true;
     }    
 
-    bool table::get_value( const char* szName )
+    template <typename T>
+    bool table::get_value( const char* szName, T& check )
     {
         assert(is_valid());
         if (!is_valid())
@@ -63,6 +70,11 @@ namespace LuaPlus
             return false;
         }
         lua_getfield(m_state, m_index, szName);
+        if (!check(lua, -1))
+        {
+            lua_pop(lua, 1);
+            return false;
+        }
         return true;
     }
 
