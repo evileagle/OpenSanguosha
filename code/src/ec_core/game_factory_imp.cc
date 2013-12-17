@@ -87,7 +87,7 @@ namespace EasyCard
         return CreateFromeLua();
     }
 
-    IGame* GameFactory::CreateFromeLua()
+    const IGame* GameFactory::CreateFromeLua()
     {
         assert(core_ != NULL);
         lua_State* lua = core_->GetLua();
@@ -100,6 +100,7 @@ namespace EasyCard
         {
             return NULL;
         }
+        
         GameConfig config;
         lua_pushnil(lua);
         while (lua_next(lua, -1))
@@ -107,7 +108,7 @@ namespace EasyCard
             const char* name = lua_tostring(lua, -2);
             if (lua_isboolean(lua, -1))
             {
-                bool value = lua_toboolean(lua, -1);
+                bool value = lua_toboolean(lua, -1) != 0;
             }
             lua_pop(lua, 1);
         }
@@ -118,6 +119,7 @@ namespace EasyCard
     const IGame* GameFactory::CreateGame( GameConfig& config )
     {
         Game* game = new Game(core_, config);
+        return game;
     }
 
 }

@@ -1,7 +1,7 @@
 #ifndef _LUA_PLUS_STACK_FRAME_H_
 #define _LUA_PLUS_STACK_FRAME_H_
 
-#include "lua/lua.h"
+#include "lua/lua.hpp"
 
 namespace LuaPlus
 {

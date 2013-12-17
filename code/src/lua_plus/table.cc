@@ -43,39 +43,9 @@ namespace LuaPlus
         return lua_tounsigned(m_state, -1);
     }
 
-    template <typename T>
-    bool table::get_value( lua_Unsigned index, T& check )
+    table table::regist_table( lua_State* lua )
     {
-        assert(is_valid());
-        if (!is_valid())
-        {
-            return false;
-        }
-        lua_pushunsigned(m_state, index);
-        lua_gettable(m_state, m_index);
-        if (!check(lua, -1))
-        {
-            lua_pop(lua, 1);
-            return false;
-        }
-        return true;
-    }    
-
-    template <typename T>
-    bool table::get_value( const char* szName, T& check )
-    {
-        assert(is_valid());
-        if (!is_valid())
-        {
-            return false;
-        }
-        lua_getfield(m_state, m_index, szName);
-        if (!check(lua, -1))
-        {
-            lua_pop(lua, 1);
-            return false;
-        }
-        return true;
+        return table(lua, LUA_REGISTRYINDEX);
     }
 
 }

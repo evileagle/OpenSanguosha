@@ -28,8 +28,8 @@ public:
     PlayerSet& GetPlayerSet();
 private:
     CECCore* core_;
-    PlayerSet players;
-    RoundLoop loop;
+    PlayerSet players_;
+    RoundLoop loop_;
 };
 
 }

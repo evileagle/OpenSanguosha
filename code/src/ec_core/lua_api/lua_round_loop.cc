@@ -18,7 +18,7 @@ int AddRound(lua_State* lua)
     }
     size_t index = lua_tounsigned(lua, 1);
     size_t pos = lua_tounsigned(lua, 2);
-    bool temp = lua_toboolean(lua, 3);
+    bool temp = lua_toboolean(lua, 3) != 0;
     PLuaGame game = GetLuaGame(lua);
     if (game == NULL)
     {

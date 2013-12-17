@@ -1,4 +1,2 @@
 LIBRARY
-
-EXPORTS
-    GetEngine
+    ec_core

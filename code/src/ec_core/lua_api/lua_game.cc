@@ -1,6 +1,7 @@
 #include "lua_game.h"
 #include "lua/lua.hpp"
 #include "lua_player_prop.h"
+#include "lua_round_loop.h"
 
 namespace EasyCard{
 namespace LuaApi{
@@ -31,7 +32,7 @@ bool CreateMetaTable(lua_State* lua)
     return true;
 }
 
-bool CreateLuaGame(lua_State* lua, const Game* game)
+bool CreateLuaGame(lua_State* lua, Game* game)
 {
     // push userdata +1
     lua_newuserdata(lua, sizeof(LuaGame));
@@ -58,7 +59,6 @@ bool CreateLuaGame(lua_State* lua, const Game* game)
 
 void DestroyLuaGame( lua_State* lua )
 {
-    DisposePlayerProp(lua);
     lua_pushnil(lua);
     lua_setglobal(lua, GAME_NAME);
 }

@@ -17,7 +17,7 @@ namespace EasyCard
         virtual const IGame* CreatePredefineGame(size_t index);
         virtual const IGame* CreateGame(GameConfig& config);
     private:
-        IGame* CreateFromeLua();
+        const IGame* CreateFromeLua();
         bool LoadPredefine();
         CECCore* core_;
 

@@ -2,6 +2,7 @@
 #include <assert.h>
 #include "lua/lua.hpp"
 #include "lua_plus/stack_frame.h"
+#include "lua_plus/table.h"
 #include "ec_common/type_def.h"
 #include "core_define.h"
 
@@ -33,11 +34,11 @@ bool CallRound( lua_State* lua )
     {
         return false;
     }
-    lua_getfield(lua, -1, "do");
-    if (!lua_isfunction(lua, -1))
+    table round(lua, -1);
+    if (!round.get_function("do"))
     {
         return false;
-    }
+    }    
     lua_pcall(lua, 0, 0, 0);
     return true;
 }
@@ -45,8 +46,8 @@ bool CallRound( lua_State* lua )
 bool GetRound( lua_State* lua )
 {
     assert(lua != NULL);
-    lua_getfield(lua, LUA_REGISTRYINDEX, ROUND_NAME);
-    return lua_istable(lua, -1);
+    table regist = table::regist_table(lua);
+    return regist.get_table(ROUND_NAME);
 }
 
 void DisposeRound( lua_State* lua )

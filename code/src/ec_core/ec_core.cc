@@ -6,6 +6,8 @@
 
 namespace EasyCard
 {
+    CECCore* CECCore::s_pInstance = NULL;
+
     CECCore::CECCore()
     {
     }

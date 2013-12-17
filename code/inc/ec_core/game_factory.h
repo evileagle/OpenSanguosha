@@ -8,7 +8,11 @@ namespace EasyCard
 {
     class IGame;
     class IGameDesc;
-    class GameConfig;
+
+    class GameConfig
+    {
+    public:
+    };
 
     class IGameFactory
     {

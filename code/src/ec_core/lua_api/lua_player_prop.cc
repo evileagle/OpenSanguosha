@@ -1,11 +1,13 @@
 #include "lua_player_prop.h"
 #include <assert.h>
 #include "lua/lua.hpp"
+#include "lua_plus/table.h"
 #include "lua_game.h"
 
 namespace EasyCard{
 namespace LuaApi{
 
+using namespace LuaPlus;
 const char* PROP_NAME = "player_prop";
 
 bool InitPlayerProp(lua_State* lua, size_t number)
@@ -42,15 +44,26 @@ int GetPlayerProp( lua_State *lua)
     // prop = game.player_prop
     if (!GetGameTable(lua))
     {
-        return false;
+        lua_pushnil(lua);
+        return 1;
     }
-    lua_getfield(lua, -1, PROP_NAME);
+    table game(lua, -1);
+    if (!game.get_table(PROP_NAME))
+    {
+        lua_pushnil(lua);
+        return 1;
+    }
     // player_prop = prop[index];
-    lua_pushunsigned(lua, index);
-    lua_gettable(lua, -2);
+    table prop(lua, -1);
+    if (!prop.get_table(index))
+    {
+        lua_pushnil(lua);
+        return 1;
+    }
 
     // value = player_prop[key]
-    lua_getfield(lua, -1, key);
+    table player(lua, -1);
+    player.get_any(key);
     return 1;
 }
 

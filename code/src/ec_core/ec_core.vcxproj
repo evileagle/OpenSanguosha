@@ -49,8 +49,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;OPENSANGUOSHA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd/lua-5.2.2/inc;./</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;EC_CORE;_DEBUG;_WINDOWS;_USRDLL;OPENSANGUOSHA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/lua/inc;./</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -65,8 +65,8 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OPENSANGUOSHA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd/lua-5.2.2/inc;./</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;EC_CORE;NDEBUG;_WINDOWS;_USRDLL;OPENSANGUOSHA_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/lua/inc;./</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -81,31 +81,31 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lapi.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lauxlib.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lcode.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lctype.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\ldebug.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\ldo.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lfunc.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lgc.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\llex.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\llimits.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lmem.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lobject.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lopcodes.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lparser.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lstate.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lstring.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\ltable.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\ltm.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lua.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lua.hpp" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\luaconf.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lualib.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lundump.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lvm.h" />
-    <ClInclude Include="..\..\3rd\lua-5.2.2\src\lzio.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lapi.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lauxlib.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lcode.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lctype.h" />
+    <ClInclude Include="..\..\3rd\lua\src\ldebug.h" />
+    <ClInclude Include="..\..\3rd\lua\src\ldo.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lfunc.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lgc.h" />
+    <ClInclude Include="..\..\3rd\lua\src\llex.h" />
+    <ClInclude Include="..\..\3rd\lua\src\llimits.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lmem.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lobject.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lopcodes.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lparser.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lstate.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lstring.h" />
+    <ClInclude Include="..\..\3rd\lua\src\ltable.h" />
+    <ClInclude Include="..\..\3rd\lua\src\ltm.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lua.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lua.hpp" />
+    <ClInclude Include="..\..\3rd\lua\src\luaconf.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lualib.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lundump.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lvm.h" />
+    <ClInclude Include="..\..\3rd\lua\src\lzio.h" />
     <ClInclude Include="..\..\inc\ec_common\cmd.h" />
     <ClInclude Include="..\..\inc\ec_common\cmdparser.h" />
     <ClInclude Include="..\..\inc\ec_common\type_def.h" />
@@ -116,6 +116,7 @@
     <ClInclude Include="..\..\inc\ec_core\player_factory.h" />
     <ClInclude Include="..\..\inc\lua_plus\stack_frame.h" />
     <ClInclude Include="..\..\inc\lua_plus\table.h" />
+    <ClInclude Include="..\..\inc\lua_plus\utility.h" />
     <ClInclude Include="core_define.h" />
     <ClInclude Include="ec_core.h" />
     <ClInclude Include="game_factory_imp.h" />
@@ -129,41 +130,41 @@
     <ClInclude Include="round_loop.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lapi.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lauxlib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lbaselib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lbitlib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lcode.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lcorolib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lctype.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\ldblib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\ldebug.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\ldo.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\ldump.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lfunc.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lgc.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\linit.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\liolib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\llex.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lmathlib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lmem.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\loadlib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lobject.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lopcodes.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\loslib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lparser.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lstate.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lstring.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lstrlib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\ltable.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\ltablib.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\ltm.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lundump.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lvm.c" />
-    <ClCompile Include="..\..\3rd\lua-5.2.2\src\lzio.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lapi.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lauxlib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lbaselib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lbitlib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lcode.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lcorolib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lctype.c" />
+    <ClCompile Include="..\..\3rd\lua\src\ldblib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\ldebug.c" />
+    <ClCompile Include="..\..\3rd\lua\src\ldo.c" />
+    <ClCompile Include="..\..\3rd\lua\src\ldump.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lfunc.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lgc.c" />
+    <ClCompile Include="..\..\3rd\lua\src\linit.c" />
+    <ClCompile Include="..\..\3rd\lua\src\liolib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\llex.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lmathlib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lmem.c" />
+    <ClCompile Include="..\..\3rd\lua\src\loadlib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lobject.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lopcodes.c" />
+    <ClCompile Include="..\..\3rd\lua\src\loslib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lparser.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lstate.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lstring.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lstrlib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\ltable.c" />
+    <ClCompile Include="..\..\3rd\lua\src\ltablib.c" />
+    <ClCompile Include="..\..\3rd\lua\src\ltm.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lundump.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lvm.c" />
+    <ClCompile Include="..\..\3rd\lua\src\lzio.c" />
     <ClCompile Include="..\lua_plus\stack_frame.cc" />
     <ClCompile Include="..\lua_plus\table.cc" />
-    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="dllmain.cc" />
     <ClCompile Include="ec_core.cc" />
     <ClCompile Include="game_factory_imp.cc" />
     <ClCompile Include="game_imp.cc" />

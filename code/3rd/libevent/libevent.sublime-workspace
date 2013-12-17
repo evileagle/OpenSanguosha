@@ -1,0 +1,205 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/D/Reference/wrk-v1.2/base/ntos/config/cmdat.c",
+			"settings":
+			{
+				"buffer_size": 13983,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 232.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/Reference/wrk-v1.2/base/ntos/config/cmsubs2.c",
+		"/D/OpenSource/libevent-patches-2.0/include/event2/event.h",
+		"/D/OpenSource/poco-1.4.6-all/Net/include/Poco/Net/Socket.h",
+		"/D/OpenSource/poco-1.4.6-all/Net/include/Poco/Net/ServerSocket.h",
+		"/D/OpenSource/libevent-patches-2.0/libevent.sublime-project",
+		"/D/Reference/ReactOS-0.3.14/ntoskrnl/config/cmapi.c",
+		"/D/Reference/wrk-v1.2/base/ntos/config/cmsubs.c",
+		"/D/kingsoft/kisengine/branches/kis_2013_released_sp5.0_fb/src/kiswebshield/kshmpgext/hmpgconfig.ini",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/D/research/IE/win7/8/IE.LOG",
+		"/D/kingsoft/kisengine/branches/kis_2013_released_sp5.0_fb/src/kiswebshield/kshmpgext/ReadMe.txt",
+		"/E/Download/setup.exe",
+		"/C/Users/wod-pc/Desktop/51job_李先生(7341261).mht",
+		"/D/kingsoft/drivergenius/src/PnpService/DgService/DgServiceConfig.ini",
+		"/D/OpenSource/protobuf-2.5.0/examples/add_person.cc",
+		"/D/OpenSource/protobuf-2.5.0/examples/list_people.cc",
+		"/D/OpenSource/protobuf-2.5.0/protobuf.pc.in",
+		"/D/OpenSource/libevent-patches-2.0/evrpc.c",
+		"/D/OpenSource/libevent-patches-2.0/include/event2/rpc.h",
+		"/D/Project/OpenSanguosha/code/src/SGS/Games/Factory.lua",
+		"/D/OpenSource/libevent/include/event2/event.h",
+		"/D/OpenSource/libevent/include/event2/rpc.h",
+		"/C/Users/wod-pc/AppData/Roaming/Sublime Text 2/Packages/User/C++.sublime-settings"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"CONTRACT",
+			"evrpc_init",
+			"CONTRACT",
+			"/*",
+			"evrpc_init",
+			"evrpc_base",
+			"event_base",
+			"event_base_free_nofinalize",
+			"game5p",
+			"Game5p",
+			"game5p",
+			"Game5p",
+			"game5p"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/D/Reference/wrk-v1.2/base/ntos/config/cmdat.c",
+					"settings":
+					{
+						"buffer_size": 13983,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11880,
+								11880
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4486.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true
+}

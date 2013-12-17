@@ -1,10 +1,9 @@
-#include "Engine/IEngine.h"
-#include "Engine.h"
+#include "ec_core.h"
 
 namespace EasyCard
 {
-    IEngine* GetEngine()
-    {
-        return CEngineS::GetInstace();
-    }
+ICore* GetCore()
+{
+    return CECCore::GetInstace();
+}
 }

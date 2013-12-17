@@ -7,7 +7,6 @@ namespace EasyCard{
 namespace LuaApi{
 
 bool InitPlayerProp(lua_State* lua, size_t number);
-bool DisposePlayerProp(lua_State* lua);
 
 
 int GetPlayerProp(lua_State *lua);

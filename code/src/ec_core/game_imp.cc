@@ -66,4 +66,9 @@ CECCore* Game::GetCore()
     return core_;
 }
 
+RoundLoop& Game::GetRoundLoop()
+{
+    return loop_;
+}
+
 }
