@@ -4,6 +4,7 @@
 struct lua_State;
 
 namespace EasyCard{
+namespace Core{
 
 class Game;
 
@@ -21,6 +22,6 @@ PLuaGame GetLuaGame(lua_State* lua);
 
 }
 }
-
+}
 #endif
 

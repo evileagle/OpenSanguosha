@@ -4,8 +4,9 @@
 #include "lua/lua.hpp"
 
 
-namespace EasyCard
-{
+namespace EasyCard{
+namespace Core{
+
     CECCore* CECCore::s_pInstance = NULL;
 
     CECCore::CECCore()
@@ -80,4 +81,5 @@ namespace EasyCard
         }
     }
 
+}
 }

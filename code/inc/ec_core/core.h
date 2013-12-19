@@ -15,16 +15,18 @@
 
 #endif // WIN32
 
-namespace EasyCard
-{
-    class IGameFactory;
-    class ICore
-    {
-    public:
-        virtual IGameFactory* GetGameFactory() = 0;
-        virtual void Dispose() = 0;
-    };
+namespace EasyCard{
+namespace Core{
 
-    EC_API ICore* GetCore();
+class IGameFactory;
+class ICore
+{
+public:
+    virtual IGameFactory* GetGameFactory() = 0;
+    virtual void Dispose() = 0;
+};
+
+EC_API ICore* GetCore();
+}
 }
 #endif

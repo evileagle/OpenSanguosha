@@ -5,8 +5,9 @@
 #include "ec_common/container.h"
 #include "round_loop.h"
 
-namespace EasyCard
-{
+namespace EasyCard{
+namespace Core{
+
 class GameConfig;
 class CECCore;
 class IPlayer;
@@ -33,5 +34,5 @@ private:
 };
 
 }
-
+}
 #endif

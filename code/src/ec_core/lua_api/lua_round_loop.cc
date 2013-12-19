@@ -6,6 +6,7 @@
 #include "round_loop.h"
 
 namespace EasyCard{
+namespace Core{
 namespace LuaApi{
 
 int AddRound(lua_State* lua)
@@ -53,5 +54,6 @@ int GetCurrentPlayer( lua_State* lua )
     return 1;
 }
 
+}
 }
 }

@@ -4,6 +4,7 @@
 #include "lua_round_loop.h"
 
 namespace EasyCard{
+namespace Core{
 namespace LuaApi{
 
 const char* METATABLE = "game_magic";
@@ -93,5 +94,6 @@ bool GetGameTable( lua_State* lua )
     return lua_istable(lua, -1);
 }
 
+}
 }
 }

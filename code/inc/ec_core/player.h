@@ -2,12 +2,14 @@
 #define _EASY_CARD_CORE_PLAYER_H_
 
 
-namespace EasyCard
+namespace EasyCard{
+namespace Core{
+
+class IPlayer
 {
-    class IPlayer
-    {
-    public:
+public:
         
-    };
+};
+}
 }
 #endif

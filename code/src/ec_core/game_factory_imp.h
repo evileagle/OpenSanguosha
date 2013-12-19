@@ -4,25 +4,27 @@
 #include "ec_core/game_factory.h"
 
 
-namespace EasyCard
+namespace EasyCard{
+namespace Core{
+
+class CECCore;
+class GameFactory : public IGameFactory
 {
-    class CECCore;
-	class GameFactory : public IGameFactory
-	{
-	public:
-		GameFactory();
-		~GameFactory();
-        bool Initialize(CECCore* core);
-        virtual size_t GetPredefineCount();
-        virtual const IGame* CreatePredefineGame(size_t index);
-        virtual const IGame* CreateGame(GameConfig& config);
-    private:
-        const IGame* CreateFromeLua();
-        bool LoadPredefine();
-        CECCore* core_;
+public:
+	GameFactory();
+	~GameFactory();
+    bool Initialize(CECCore* core);
+    virtual size_t GetPredefineCount();
+    virtual const IGame* CreatePredefineGame(size_t index);
+    virtual const IGame* CreateGame(GameConfig& config);
+private:
+    const IGame* CreateFromeLua();
+    bool LoadPredefine();
+    CECCore* core_;
 
-	};
+};
 
+}
 }
 #endif
 

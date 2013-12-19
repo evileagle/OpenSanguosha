@@ -47,12 +47,6 @@
     <ClInclude Include="game_imp.h">
       <Filter>ec_core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\ec_common\cmd.h">
-      <Filter>ec_common</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\ec_common\cmdparser.h">
-      <Filter>ec_common</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\inc\ec_common\type_def.h">
       <Filter>ec_common</Filter>
     </ClInclude>

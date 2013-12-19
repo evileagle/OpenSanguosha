@@ -4,6 +4,7 @@
 #include "ec_common/type_def.h"
 
 namespace EasyCard{
+namespace Core{
 
 class Game;
 class RoundLoop
@@ -38,6 +39,6 @@ private:
 };
 
 }
-
+}
 
 #endif

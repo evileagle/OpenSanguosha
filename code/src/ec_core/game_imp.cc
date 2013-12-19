@@ -7,7 +7,7 @@
 #include "lua_loader/main_loader.h"
 
 namespace EasyCard{
-
+namespace Core{
 
 Game::Game()
     : core_(NULL)
@@ -71,4 +71,5 @@ RoundLoop& Game::GetRoundLoop()
     return loop_;
 }
 
+}
 }

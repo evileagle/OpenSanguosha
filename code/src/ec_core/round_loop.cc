@@ -6,6 +6,8 @@
 #include "ec_core.h"
 
 namespace EasyCard{
+namespace Core{
+
 using namespace LuaLoader;
 const size_t RoundLoop::ROUND_BEGIN = 0;
 const size_t RoundLoop::ROUND_END = -1;
@@ -84,5 +86,6 @@ void RoundLoop::Dispose()
     assert(current_ == NULL);
 }
 
+}
 }
 

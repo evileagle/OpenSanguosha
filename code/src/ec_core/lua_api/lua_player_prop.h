@@ -4,6 +4,7 @@
 struct lua_State;
 
 namespace EasyCard{
+namespace Core{
 namespace LuaApi{
 
 bool InitPlayerProp(lua_State* lua, size_t number);
@@ -12,6 +13,7 @@ bool InitPlayerProp(lua_State* lua, size_t number);
 int GetPlayerProp(lua_State *lua);
 int SetPlayerProp(lua_State *lua);
 
+}
 }
 }
 #endif

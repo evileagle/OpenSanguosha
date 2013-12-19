@@ -7,6 +7,7 @@
 #include "core_define.h"
 
 namespace EasyCard{
+namespace Core{
 namespace LuaLoader{
 using namespace LuaPlus;
 
@@ -57,5 +58,6 @@ void DisposeRound( lua_State* lua )
     lua_setfield(lua, LUA_REGISTRYINDEX, ROUND_NAME);
 }
 
+}
 }
 }

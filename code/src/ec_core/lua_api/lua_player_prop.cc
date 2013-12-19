@@ -5,6 +5,7 @@
 #include "lua_game.h"
 
 namespace EasyCard{
+namespace Core{
 namespace LuaApi{
 
 using namespace LuaPlus;
@@ -86,5 +87,6 @@ int SetPlayerProp( lua_State *lua )
     return 0;
 }
 
+}
 }
 }

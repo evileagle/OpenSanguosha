@@ -5,6 +5,7 @@
 struct lua_State;
 
 namespace EasyCard{
+namespace Core{
 namespace LuaApi{
 
 int AddRound(lua_State* lua);
@@ -13,5 +14,5 @@ int GetCurrentPlayer(lua_State* lua);
 
 }
 }
-
+}
 #endif

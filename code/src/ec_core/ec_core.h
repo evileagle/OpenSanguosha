@@ -6,28 +6,30 @@
 
 struct lua_State;
 
-namespace EasyCard
+namespace EasyCard{
+namespace Core{
+
+class CECCore : public ICore
 {
-    class CECCore : public ICore
-    {
-    public:
-        CECCore();
-        ~CECCore();
-        static CECCore* GetInstace();
-        bool Initalize();
-        IGameFactory* GetGameFactory();
-        lua_State* GetLua();
-        void Dispose();
+public:
+    CECCore();
+    ~CECCore();
+    static CECCore* GetInstace();
+    bool Initalize();
+    IGameFactory* GetGameFactory();
+    lua_State* GetLua();
+    void Dispose();
 
-    private:
-        bool InitLua();
-        void DeleteLua();
+private:
+    bool InitLua();
+    void DeleteLua();
 
-        GameFactory m_factory;
-        lua_State* lua_;
-        static CECCore* s_pInstance;
+    GameFactory m_factory;
+    lua_State* lua_;
+    static CECCore* s_pInstance;
 
-    };
+};
+}
 }
 
 

@@ -9,6 +9,7 @@
 using namespace std;
 
 namespace EasyCard{
+namespace Core{
 
 
 #define EASY_CARD_GAME_NAME "main"
@@ -96,5 +97,6 @@ bool CallOnEvent( lua_State* lua )
     return true;
 }
 
+}
 }
 }

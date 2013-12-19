@@ -3,10 +3,12 @@
 
 struct lua_State;
 namespace EasyCard{
+namespace Core{
 namespace LuaApi{
 
 int CreateEvent(lua_State* lua);
 
+}
 }
 }
 #endif

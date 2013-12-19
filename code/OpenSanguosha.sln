@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ec_core", "src\ec_core\ec_core.vcxproj", "{550A1F7B-C4C3-4C43-8680-BAAB81679653}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ec_rpc", "src\ec_rpc\ec_rpc.vcxproj", "{ADCFD1D4-BAA8-44C8-9BCA-623FB2E1C05F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{550A1F7B-C4C3-4C43-8680-BAAB81679653}.Debug|Win32.Build.0 = Debug|Win32
 		{550A1F7B-C4C3-4C43-8680-BAAB81679653}.Release|Win32.ActiveCfg = Release|Win32
 		{550A1F7B-C4C3-4C43-8680-BAAB81679653}.Release|Win32.Build.0 = Release|Win32
+		{ADCFD1D4-BAA8-44C8-9BCA-623FB2E1C05F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ADCFD1D4-BAA8-44C8-9BCA-623FB2E1C05F}.Debug|Win32.Build.0 = Debug|Win32
+		{ADCFD1D4-BAA8-44C8-9BCA-623FB2E1C05F}.Release|Win32.ActiveCfg = Release|Win32
+		{ADCFD1D4-BAA8-44C8-9BCA-623FB2E1C05F}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

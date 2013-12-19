@@ -3,6 +3,7 @@
 
 struct lua_State;
 namespace EasyCard{
+namespace Core{
 
 class GameConfig;
 
@@ -15,5 +16,5 @@ namespace LuaLoader{
     bool GetMain(lua_State* lua);
 }
 }
-
+}
 #endif

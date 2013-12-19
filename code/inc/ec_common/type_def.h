@@ -5,23 +5,26 @@
 #include <deque>
 #include <stddef.h>
 
-namespace EasyCard
+namespace EasyCard{
+namespace Core{
+
+using namespace std;
+typedef enum ecode
 {
-    using namespace std;
-    typedef enum ecode
-    {
-        EC_SUCESS = 0,
-        EC_FAIL
-    };
+    EC_SUCESS = 0,
+    EC_FAIL
+};
 
-    typedef vector<void*> ptr_vector;
-    typedef vector<string> string_vector;
-    typedef vector<int>     int_vector;
-    typedef vector<long>    long_vector;
-    typedef vector<unsigned int>    uint_vector;
-    typedef vector<unsigned long> ulong_vector;
+typedef vector<void*> ptr_vector;
+typedef vector<string> string_vector;
+typedef vector<int>     int_vector;
+typedef vector<long>    long_vector;
+typedef vector<unsigned int>    uint_vector;
+typedef vector<unsigned long> ulong_vector;
 
-    typedef deque<void*>    ptr_queue;
+typedef deque<void*>    ptr_queue;
+
+}
 }
 
 #endif

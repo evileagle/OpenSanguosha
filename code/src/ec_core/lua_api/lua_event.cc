@@ -5,6 +5,7 @@
 #include "lua/lua.hpp"
 
 namespace EasyCard{
+namespace Core{
 namespace LuaApi{
 
 using namespace LuaLoader;
@@ -23,5 +24,6 @@ int CreateEvent( lua_State* lua )
     return 1;
 }
 
+}
 }
 }
