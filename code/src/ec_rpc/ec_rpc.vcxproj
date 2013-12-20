@@ -100,7 +100,9 @@
     <ClInclude Include="..\..\3rd\libevent\ratelim-internal.h" />
     <ClInclude Include="..\..\3rd\libevent\strlcpy-internal.h" />
     <ClInclude Include="..\..\3rd\libevent\util-internal.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_client.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_factory.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_server.h" />
     <ClInclude Include="rpc_net_client_imp.h" />
   </ItemGroup>

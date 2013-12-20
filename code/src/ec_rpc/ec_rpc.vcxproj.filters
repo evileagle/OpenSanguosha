@@ -19,6 +19,9 @@
     <Filter Include="libevent">
       <UniqueIdentifier>{26e61499-ef7a-4ffa-94dd-3208bb4d1c73}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ec_rpc">
+      <UniqueIdentifier>{13515e27-8e82-44f4-91b1-e7e40d36b548}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\inc\ec_rpc\rpc_client.h">
@@ -101,6 +104,12 @@
     </ClInclude>
     <ClInclude Include="..\..\3rd\libevent\util-internal.h">
       <Filter>libevent</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_factory.h">
+      <Filter>rpc_factory</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc.h">
+      <Filter>ec_rpc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
