@@ -6,7 +6,7 @@
 namespace EasyCard{
 namespace RPC{
 
-    class RpcNetClient : public IRpcClient
+    class RpcTcpSender : public IRpcSender
     {
     public:
     };

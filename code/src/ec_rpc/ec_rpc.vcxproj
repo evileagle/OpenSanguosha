@@ -100,11 +100,15 @@
     <ClInclude Include="..\..\3rd\libevent\ratelim-internal.h" />
     <ClInclude Include="..\..\3rd\libevent\strlcpy-internal.h" />
     <ClInclude Include="..\..\3rd\libevent\util-internal.h" />
-    <ClInclude Include="..\..\inc\ec_rpc\rpc.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_receiver.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_sender.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_client.h" />
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_factory.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_listener.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_server.h" />
-    <ClInclude Include="rpc_net_client_imp.h" />
+    <ClInclude Include="rpc_local_sender.h" />
+    <ClInclude Include="rpc_client_imp.h" />
+    <ClInclude Include="rpc_net_sender.h" />
+    <ClInclude Include="rpc_server_imp.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\3rd\libevent\arc4random.c" />
@@ -141,7 +145,10 @@
     <ClCompile Include="..\..\3rd\libevent\signal.c" />
     <ClCompile Include="..\..\3rd\libevent\strlcpy.c" />
     <ClCompile Include="..\..\3rd\libevent\win32select.c" />
-    <ClCompile Include="rpc_net_client_imp.cc" />
+    <ClCompile Include="rpc_local_sender.cc" />
+    <ClCompile Include="rpc_client_imp.cc" />
+    <ClCompile Include="rpc_net_sender.cc" />
+    <ClCompile Include="rpc_server_imp.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

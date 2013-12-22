@@ -5,34 +5,21 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="libevent">
+      <UniqueIdentifier>{26e61499-ef7a-4ffa-94dd-3208bb4d1c73}</UniqueIdentifier>
+    </Filter>
     <Filter Include="rpc_client">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="rpc_server">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <UniqueIdentifier>{c2a70670-b662-4dbd-a3fb-110669e729b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="rpc_factory">
-      <UniqueIdentifier>{924989c8-9979-4e3a-bcdb-ba4a9a2617c5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="libevent">
-      <UniqueIdentifier>{26e61499-ef7a-4ffa-94dd-3208bb4d1c73}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ec_rpc">
+    <Filter Include="rpc_sender">
       <UniqueIdentifier>{13515e27-8e82-44f4-91b1-e7e40d36b548}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_client.h">
-      <Filter>rpc_client</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_server.h">
-      <Filter>rpc_server</Filter>
-    </ClInclude>
-    <ClInclude Include="rpc_net_client_imp.h">
-      <Filter>rpc_client</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\3rd\libevent\bufferevent-internal.h">
       <Filter>libevent</Filter>
     </ClInclude>
@@ -105,17 +92,35 @@
     <ClInclude Include="..\..\3rd\libevent\util-internal.h">
       <Filter>libevent</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_factory.h">
-      <Filter>rpc_factory</Filter>
+    <ClInclude Include="rpc_server_imp.h">
+      <Filter>rpc_server</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc.h">
-      <Filter>ec_rpc</Filter>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_server.h">
+      <Filter>rpc_server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_client.h">
+      <Filter>rpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="rpc_client_imp.h">
+      <Filter>rpc_client</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_listener.h">
+      <Filter>rpc_server</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_receiver.h">
+      <Filter>rpc_sender</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_sender.h">
+      <Filter>rpc_sender</Filter>
+    </ClInclude>
+    <ClInclude Include="rpc_net_sender.h">
+      <Filter>rpc_sender</Filter>
+    </ClInclude>
+    <ClInclude Include="rpc_local_sender.h">
+      <Filter>rpc_sender</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="rpc_net_client_imp.cc">
-      <Filter>rpc_client</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\3rd\libevent\arc4random.c">
       <Filter>libevent</Filter>
     </ClCompile>
@@ -217,6 +222,18 @@
     </ClCompile>
     <ClCompile Include="..\..\3rd\libevent\win32select.c">
       <Filter>libevent</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_server_imp.cc">
+      <Filter>rpc_server</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_client_imp.cc">
+      <Filter>rpc_client</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_local_sender.cc">
+      <Filter>rpc_sender</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_net_sender.cc">
+      <Filter>rpc_sender</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

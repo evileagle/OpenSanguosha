@@ -5,21 +5,14 @@
 namespace EasyCard{
 namespace RPC{
 
-    class IRpcClient;
+class IRpcServer
+{
+public:
+    virtual int RegistServer(const char* name, IRpcListener* listener) = 0;
+};
 
-    class IRpcListener
-    {
-    public:
-        virtual int OnAccept(IRpcClient* client) = 0;
-        virtual int OnError(unsigned long code) = 0;
-    };
+IRpcServer* GetServer();
 
-    class IRpcServer
-    {
-    public:
-        virtual void SetListener(IRpcListener* listener) = 0;
-        virtual void Close() = 0;
-    };
 }
 }
 #endif
