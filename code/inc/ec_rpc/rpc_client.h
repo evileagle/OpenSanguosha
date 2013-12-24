@@ -11,9 +11,8 @@ class IRpcClient
 public:
     virtual int CreateSender(const char* name, IRpcSender** sender) = 0;
     virtual void SetServer(const char* address, unsigned short port) = 0;
+    virtual void Close() = 0;
 };
-
-IRpcClient* GetClient();
 
 }
 }

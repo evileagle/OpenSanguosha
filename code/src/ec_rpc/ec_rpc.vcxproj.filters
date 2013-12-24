@@ -18,6 +18,12 @@
     <Filter Include="rpc_sender">
       <UniqueIdentifier>{13515e27-8e82-44f4-91b1-e7e40d36b548}</UniqueIdentifier>
     </Filter>
+    <Filter Include="rpc_net">
+      <UniqueIdentifier>{3020915f-9c8f-41ca-87e9-d41caa8c77b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rpc_manager">
+      <UniqueIdentifier>{063b4d06-70b1-405b-80c2-2a78e04baa73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\3rd\libevent\bufferevent-internal.h">
@@ -118,6 +124,15 @@
     </ClInclude>
     <ClInclude Include="rpc_local_sender.h">
       <Filter>rpc_sender</Filter>
+    </ClInclude>
+    <ClInclude Include="rpc_net_util.h">
+      <Filter>rpc_net</Filter>
+    </ClInclude>
+    <ClInclude Include="rpc_manager_imp.h">
+      <Filter>rpc_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_manager.h">
+      <Filter>rpc_manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -234,6 +249,12 @@
     </ClCompile>
     <ClCompile Include="rpc_net_sender.cc">
       <Filter>rpc_sender</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_net_util.cc">
+      <Filter>rpc_net</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_manager_imp.cc">
+      <Filter>rpc_manager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
