@@ -50,7 +50,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;EC_RPC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd/libevent/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/libuv/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -66,7 +66,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;EC_RPC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd/libevent/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/libuv/include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -76,30 +76,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\3rd\libevent\bufferevent-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\changelist-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\defer-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\evbuffer-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\evdns.h" />
-    <ClInclude Include="..\..\3rd\libevent\event-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\event.h" />
-    <ClInclude Include="..\..\3rd\libevent\evhttp.h" />
-    <ClInclude Include="..\..\3rd\libevent\evmap-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\evrpc-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\evrpc.h" />
-    <ClInclude Include="..\..\3rd\libevent\evsignal-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\evthread-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\evutil.h" />
-    <ClInclude Include="..\..\3rd\libevent\ht-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\http-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\iocp-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\ipv6-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\log-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\minheap-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\mm-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\ratelim-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\strlcpy-internal.h" />
-    <ClInclude Include="..\..\3rd\libevent\util-internal.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\queue.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\uv-common.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\atomicops-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\handle-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\internal.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\req-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\stream-inl.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\winapi.h" />
+    <ClInclude Include="..\..\3rd\libuv\src\win\winsock.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_manager.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_receiver.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_sender.h" />
@@ -107,52 +92,45 @@
     <ClInclude Include="..\..\inc\ec_rpc\rpc_listener.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_server.h" />
     <ClInclude Include="rpc_manager_imp.h" />
-    <ClInclude Include="rpc_net_util.h" />
     <ClInclude Include="rpc_local_sender.h" />
     <ClInclude Include="rpc_client_imp.h" />
     <ClInclude Include="rpc_net_sender.h" />
     <ClInclude Include="rpc_server_imp.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\3rd\libevent\arc4random.c" />
-    <ClCompile Include="..\..\3rd\libevent\buffer.c" />
-    <ClCompile Include="..\..\3rd\libevent\bufferevent.c" />
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_async.c" />
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_filter.c" />
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_openssl.c" />
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_pair.c" />
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_ratelim.c" />
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_sock.c" />
-    <ClCompile Include="..\..\3rd\libevent\buffer_iocp.c" />
-    <ClCompile Include="..\..\3rd\libevent\devpoll.c" />
-    <ClCompile Include="..\..\3rd\libevent\epoll.c" />
-    <ClCompile Include="..\..\3rd\libevent\epoll_sub.c" />
-    <ClCompile Include="..\..\3rd\libevent\evdns.c" />
-    <ClCompile Include="..\..\3rd\libevent\event.c" />
-    <ClCompile Include="..\..\3rd\libevent\event_iocp.c" />
-    <ClCompile Include="..\..\3rd\libevent\event_tagging.c" />
-    <ClCompile Include="..\..\3rd\libevent\evmap.c" />
-    <ClCompile Include="..\..\3rd\libevent\evport.c" />
-    <ClCompile Include="..\..\3rd\libevent\evrpc.c" />
-    <ClCompile Include="..\..\3rd\libevent\evthread.c" />
-    <ClCompile Include="..\..\3rd\libevent\evthread_pthread.c" />
-    <ClCompile Include="..\..\3rd\libevent\evthread_win32.c" />
-    <ClCompile Include="..\..\3rd\libevent\evutil.c" />
-    <ClCompile Include="..\..\3rd\libevent\evutil_rand.c" />
-    <ClCompile Include="..\..\3rd\libevent\http.c" />
-    <ClCompile Include="..\..\3rd\libevent\kqueue.c" />
-    <ClCompile Include="..\..\3rd\libevent\listener.c" />
-    <ClCompile Include="..\..\3rd\libevent\log.c" />
-    <ClCompile Include="..\..\3rd\libevent\poll.c" />
-    <ClCompile Include="..\..\3rd\libevent\select.c" />
-    <ClCompile Include="..\..\3rd\libevent\signal.c" />
-    <ClCompile Include="..\..\3rd\libevent\strlcpy.c" />
-    <ClCompile Include="..\..\3rd\libevent\win32select.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\fs-poll.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\inet.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\uv-common.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\version.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\async.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\core.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\dl.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\error.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\fs-event.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\fs.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\getaddrinfo.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\handle.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\loop-watcher.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\pipe.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\poll.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\process-stdio.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\process.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\req.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\signal.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\stream.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\tcp.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\thread.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\threadpool.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\timer.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\tty.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\udp.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\util.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\winapi.c" />
+    <ClCompile Include="..\..\3rd\libuv\src\win\winsock.c" />
     <ClCompile Include="rpc_local_sender.cc" />
     <ClCompile Include="rpc_client_imp.cc" />
     <ClCompile Include="rpc_manager_imp.cc" />
     <ClCompile Include="rpc_net_sender.cc" />
-    <ClCompile Include="rpc_net_util.cc" />
     <ClCompile Include="rpc_server_imp.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

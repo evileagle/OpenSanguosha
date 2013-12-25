@@ -1,10 +1,13 @@
 #ifndef _EASY_CARD_RPC_SERVER_IMP_H_
 #define _EASY_CARD_RPC_SERVER_IMP_H_
 
-struct event_base;
+#include "ec_common/type_def.h"
+#include "uv.h"
 
 namespace EasyCard{
 namespace RPC{
+
+using namespace std;
 
 class RpcManager;
 
@@ -20,9 +23,12 @@ public:
     virtual void Close();
 private:
     void Work();
+    static void WorkThread(void *arg);
     RpcManager* manager_;
-    string address_;
-    unsigned short port_;
+    sockaddr_in addr_;
+    uv_thread_t thread_;
+    uv_tcp_t server_;
+    uv_loop_t* loop_;
 };
 
 }

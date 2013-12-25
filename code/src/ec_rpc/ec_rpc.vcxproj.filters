@@ -5,9 +5,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="libevent">
-      <UniqueIdentifier>{26e61499-ef7a-4ffa-94dd-3208bb4d1c73}</UniqueIdentifier>
-    </Filter>
     <Filter Include="rpc_client">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
@@ -24,80 +21,11 @@
     <Filter Include="rpc_manager">
       <UniqueIdentifier>{063b4d06-70b1-405b-80c2-2a78e04baa73}</UniqueIdentifier>
     </Filter>
+    <Filter Include="libuv">
+      <UniqueIdentifier>{e1beab34-8c66-4fcf-aa7f-30c050a50075}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\3rd\libevent\bufferevent-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\changelist-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\defer-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evbuffer-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evdns.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\event.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\event-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evhttp.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evmap-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evrpc.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evrpc-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evsignal-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evthread-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\evutil.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\ht-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\http-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\iocp-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\ipv6-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\log-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\minheap-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\mm-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\ratelim-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\strlcpy-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\3rd\libevent\util-internal.h">
-      <Filter>libevent</Filter>
-    </ClInclude>
     <ClInclude Include="rpc_server_imp.h">
       <Filter>rpc_server</Filter>
     </ClInclude>
@@ -125,119 +53,41 @@
     <ClInclude Include="rpc_local_sender.h">
       <Filter>rpc_sender</Filter>
     </ClInclude>
-    <ClInclude Include="rpc_net_util.h">
-      <Filter>rpc_net</Filter>
-    </ClInclude>
     <ClInclude Include="rpc_manager_imp.h">
       <Filter>rpc_manager</Filter>
     </ClInclude>
     <ClInclude Include="..\..\inc\ec_rpc\rpc_manager.h">
       <Filter>rpc_manager</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\queue.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\uv-common.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\atomicops-inl.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\handle-inl.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\internal.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\req-inl.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\stream-inl.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\winapi.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\3rd\libuv\src\win\winsock.h">
+      <Filter>libuv</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\3rd\libevent\arc4random.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\buffer.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\buffer_iocp.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\bufferevent.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_async.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_filter.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_openssl.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_pair.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_ratelim.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\bufferevent_sock.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\devpoll.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\epoll.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\epoll_sub.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evdns.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\event.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\event_iocp.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\event_tagging.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evmap.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evport.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evrpc.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evthread.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evthread_pthread.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evthread_win32.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evutil.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\evutil_rand.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\http.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\kqueue.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\listener.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\log.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\poll.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\select.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\signal.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\strlcpy.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\3rd\libevent\win32select.c">
-      <Filter>libevent</Filter>
-    </ClCompile>
     <ClCompile Include="rpc_server_imp.cc">
       <Filter>rpc_server</Filter>
     </ClCompile>
@@ -250,11 +100,95 @@
     <ClCompile Include="rpc_net_sender.cc">
       <Filter>rpc_sender</Filter>
     </ClCompile>
-    <ClCompile Include="rpc_net_util.cc">
-      <Filter>rpc_net</Filter>
-    </ClCompile>
     <ClCompile Include="rpc_manager_imp.cc">
       <Filter>rpc_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\fs-poll.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\inet.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\uv-common.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\version.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\async.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\core.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\dl.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\error.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\fs.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\fs-event.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\getaddrinfo.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\handle.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\loop-watcher.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\pipe.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\poll.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\process.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\process-stdio.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\req.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\signal.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\stream.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\tcp.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\thread.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\threadpool.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\timer.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\tty.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\udp.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\util.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\winapi.c">
+      <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\3rd\libuv\src\win\winsock.c">
+      <Filter>libuv</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
