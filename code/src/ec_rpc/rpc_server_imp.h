@@ -24,6 +24,7 @@ public:
 private:
     void Work();
     static void WorkThread(void *arg);
+    static void OnConnection(uv_stream_t* server, int status);
     RpcManager* manager_;
     sockaddr_in addr_;
     uv_thread_t thread_;

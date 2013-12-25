@@ -33,7 +33,7 @@ int RpcServer::BindAddress( const char* address, unsigned short port )
 
 void RpcServer::Work()
 {
-    uv_listen(server_, , );
+    uv_listen((uv_stream_t*)&server_, SOMAXCONN, OnConnection);
     uv_run(loop_, UV_RUN_DEFAULT);
 }
 
