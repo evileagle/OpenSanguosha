@@ -20,7 +20,9 @@ int RpcServer::Initialize( RpcManager* manager )
     assert(manager != NULL);
     manager_ = manager;
     loop_ = uv_loop_new();
-    return uv_tcp_init(loop_, &server_);
+    int err = uv_tcp_init(loop_, &server_);
+    server_.data = this;
+    return err;
 }
 
 int RpcServer::BindAddress( const char* address, unsigned short port )
@@ -33,7 +35,7 @@ int RpcServer::BindAddress( const char* address, unsigned short port )
 
 void RpcServer::Work()
 {
-    uv_listen((uv_stream_t*)&server_, SOMAXCONN, OnConnection);
+    uv_listen((uv_stream_t*)&server_, SOMAXCONN, ConnectionCallback);
     uv_run(loop_, UV_RUN_DEFAULT);
 }
 
@@ -51,6 +53,30 @@ void RpcServer::WorkThread( void *arg )
 void RpcServer::Close()
 {
     uv_thread_join(&thread_);
+    uv_loop_delete(loop_);
+    uv_close((uv_handle_t*)&server_, NULL);
+}
+
+void RpcServer::ConnectionCallback( uv_stream_t* server, int status )
+{
+    RpcServer* pThis = (RpcServer*)server->data;
+    pThis->OnConnection(status);
+
+}
+
+void RpcServer::OnConnection( int status )
+{
+    if (status == -1)
+    {
+    }
+    else
+    {
+        uv_tcp_t* client = new uv_tcp_t;
+        if (uv_accept((uv_stream_t*)&server_, (uv_stream_t*)client) == 0)
+        {
+
+        }
+    }
 }
 
 }

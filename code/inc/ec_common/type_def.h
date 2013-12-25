@@ -6,7 +6,6 @@
 #include <stddef.h>
 
 namespace EasyCard{
-namespace Core{
 
 using namespace std;
 typedef enum ecode
@@ -24,7 +23,6 @@ typedef vector<unsigned long> ulong_vector;
 
 typedef deque<void*>    ptr_queue;
 
-}
 }
 
 #endif
