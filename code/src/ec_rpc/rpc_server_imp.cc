@@ -36,5 +36,10 @@ void RpcServer::Work()
 
 }
 
+int RpcServer::Start()
+{
+
+}
+
 }
 }

@@ -14,7 +14,7 @@ public:
     RpcServer();
     ~RpcServer();
     int Initialize(RpcManager* manager);
-    virtual int Start() = 0;
+    virtual int Start();
     virtual int RegistListener(const char* name, IRpcListener* listener);
     virtual int BindAddress(const char* address, unsigned short port);
     virtual void Close();
