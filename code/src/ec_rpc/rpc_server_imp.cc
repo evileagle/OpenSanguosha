@@ -21,7 +21,7 @@ int RpcServer::Initialize( RpcManager* manager )
     manager_ = manager;
     loop_ = uv_loop_new();
     int err = uv_tcp_init(loop_, &server_);
-    server_.data = this;
+    loop_->data = this;
     return err;
 }
 
@@ -33,10 +33,21 @@ int RpcServer::BindAddress( const char* address, unsigned short port )
     return uv_tcp_bind(&server_, (sockaddr*)&addr_);
 }
 
+void RpcServer::WorkThread( void *arg )
+{
+    RpcServer* pThis = (RpcServer*)arg;
+    pThis->Work();
+}
+
 void RpcServer::Work()
 {
+    uv_async_init(loop_, &exit_, Exit);
     uv_listen((uv_stream_t*)&server_, SOMAXCONN, ConnectionCallback);
     uv_run(loop_, UV_RUN_DEFAULT);
+
+    uv_close((uv_handle_t*)&server_, NULL);
+    uv_close((uv_handle_t*)&exit_, NULL);
+    uv_loop_delete(loop_);
 }
 
 int RpcServer::Start()
@@ -44,21 +55,14 @@ int RpcServer::Start()
     return uv_thread_create(&thread_, WorkThread, this);
 }
 
-void RpcServer::WorkThread( void *arg )
-{
-    RpcServer* pThis = (RpcServer*)arg;
-    pThis->Work();
-}
-
 void RpcServer::Close()
 {
     WaitStop();
-    Destroy();
 }
 
 void RpcServer::ConnectionCallback( uv_stream_t* server, int status )
 {
-    RpcServer* pThis = (RpcServer*)server->data;
+    RpcServer* pThis = (RpcServer*)server->loop->data;
     pThis->OnConnection(status);
 
 }
@@ -67,7 +71,7 @@ void RpcServer::OnConnection( int status )
 {
     if (status < 0)
     {
-        uv_stop(loop_);
+        ProcessError();
         return;
     }
     else
@@ -80,16 +84,26 @@ void RpcServer::OnConnection( int status )
     }
 }
 
-void RpcServer::Destroy()
-{
-    uv_close((uv_handle_t*)&server_, NULL);
-    uv_loop_delete(loop_);
-}
-
 void RpcServer::WaitStop()
 {
-    uv_stop(loop_);
+    uv_async_send(&exit_);
     uv_thread_join(&thread_);
+}
+
+void RpcServer::ProcessError()
+{
+    Stop();
+}
+
+void RpcServer::Exit( uv_async_t* handle, int status )
+{
+    RpcServer* pThis = (RpcServer*)handle->loop->data;
+    pThis->Stop();
+}
+
+void RpcServer::Stop()
+{
+    uv_stop(loop_);
 }
 
 }
