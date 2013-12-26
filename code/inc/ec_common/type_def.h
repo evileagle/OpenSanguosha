@@ -23,6 +23,8 @@ typedef vector<unsigned long> ulong_vector;
 
 typedef deque<void*>    ptr_queue;
 
+typedef map<string, void*> string_ptr_map;
+
 }
 
 #endif

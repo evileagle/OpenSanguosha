@@ -52,9 +52,8 @@ void RpcServer::WorkThread( void *arg )
 
 void RpcServer::Close()
 {
-    uv_thread_join(&thread_);
-    uv_loop_delete(loop_);
-    uv_close((uv_handle_t*)&server_, NULL);
+    WaitStop();
+    Destroy();
 }
 
 void RpcServer::ConnectionCallback( uv_stream_t* server, int status )
@@ -66,8 +65,10 @@ void RpcServer::ConnectionCallback( uv_stream_t* server, int status )
 
 void RpcServer::OnConnection( int status )
 {
-    if (status == -1)
+    if (status < 0)
     {
+        uv_stop(loop_);
+        return;
     }
     else
     {
@@ -77,6 +78,18 @@ void RpcServer::OnConnection( int status )
 
         }
     }
+}
+
+void RpcServer::Destroy()
+{
+    uv_close((uv_handle_t*)&server_, NULL);
+    uv_loop_delete(loop_);
+}
+
+void RpcServer::WaitStop()
+{
+    uv_stop(loop_);
+    uv_thread_join(&thread_);
 }
 
 }

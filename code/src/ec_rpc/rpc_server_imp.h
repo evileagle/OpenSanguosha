@@ -28,12 +28,15 @@ private:
     void OnConnection(int status);
     static void WorkThread(void *arg);
     static void ConnectionCallback(uv_stream_t* server, int status);
+    void Destroy();
+    void WaitStop();
     RpcManager* manager_;
     sockaddr_in addr_;
     uv_thread_t thread_;
     uv_tcp_t server_;
     uv_loop_t* loop_;
     ptr_vector clients_;
+    string_ptr_map listeners_;
 };
 
 }
