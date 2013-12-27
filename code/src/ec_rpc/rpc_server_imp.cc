@@ -6,6 +6,8 @@ namespace RPC{
 
 RpcServer::RpcServer()
     : manager_(NULL)
+    , loop_(NULL)
+    , thread_(NULL)
 {
 
 }
@@ -15,23 +17,18 @@ RpcServer::~RpcServer()
 
 }
 
-int RpcServer::Initialize( RpcManager* manager )
+int RpcServer::Initialize( RpcManager* manager, const char* address, unsigned short port )
 {
     assert(manager != NULL);
     manager_ = manager;
+    address_ = address;
+    port_ = port;
     loop_ = uv_loop_new();
-    int err = uv_tcp_init(loop_, &server_);
     loop_->data = this;
-    return err;
+    uv_async_init(loop_, &exit_notify_, Exit);
+    return 0;
 }
 
-int RpcServer::BindAddress( const char* address, unsigned short port )
-{
-    assert(address != NULL);
-
-    uv_ip4_addr(address, port, &addr_);
-    return uv_tcp_bind(&server_, (sockaddr*)&addr_);
-}
 
 void RpcServer::WorkThread( void *arg )
 {
@@ -41,12 +38,16 @@ void RpcServer::WorkThread( void *arg )
 
 void RpcServer::Work()
 {
-    uv_async_init(loop_, &exit_, Exit);
-    uv_listen((uv_stream_t*)&server_, SOMAXCONN, ConnectionCallback);
+    uv_tcp_t server;
+    uv_tcp_init(loop_, &server);
+    sockaddr_in addr = {0};
+    uv_ip4_addr(address_.c_str(), port_, &addr);
+    uv_tcp_bind(&server, (sockaddr*)&addr);
+    uv_listen((uv_stream_t*)&server, SOMAXCONN, ConnectionCallback);
     uv_run(loop_, UV_RUN_DEFAULT);
 
-    uv_close((uv_handle_t*)&server_, NULL);
-    uv_close((uv_handle_t*)&exit_, NULL);
+    uv_close((uv_handle_t*)&server, NULL);
+    uv_close((uv_handle_t*)&exit_notify_, NULL);
     uv_loop_delete(loop_);
 }
 
@@ -62,48 +63,37 @@ void RpcServer::Close()
 
 void RpcServer::ConnectionCallback( uv_stream_t* server, int status )
 {
-    RpcServer* pThis = (RpcServer*)server->loop->data;
-    pThis->OnConnection(status);
-
-}
-
-void RpcServer::OnConnection( int status )
-{
     if (status < 0)
     {
-        ProcessError();
+        uv_stop(server->loop);
         return;
     }
     else
     {
         uv_tcp_t* client = new uv_tcp_t;
-        if (uv_accept((uv_stream_t*)&server_, (uv_stream_t*)client) == 0)
+        if (uv_accept((uv_stream_t*)&server, (uv_stream_t*)client) == 0)
         {
-
+            uv_read_start((uv_stream_t*)client, );
         }
     }
 }
 
-void RpcServer::WaitStop()
+void RpcServer::OnConnection( int status )
 {
-    uv_async_send(&exit_);
-    uv_thread_join(&thread_);
 }
 
-void RpcServer::ProcessError()
+void RpcServer::WaitStop()
 {
-    Stop();
+    if (loop_ != NULL)
+    {
+        uv_async_send(&exit_notify_);
+        uv_thread_join(&thread_);
+    }
 }
 
 void RpcServer::Exit( uv_async_t* handle, int status )
 {
-    RpcServer* pThis = (RpcServer*)handle->loop->data;
-    pThis->Stop();
-}
-
-void RpcServer::Stop()
-{
-    uv_stop(loop_);
+    uv_stop(handle->loop);
 }
 
 }

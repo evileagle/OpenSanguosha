@@ -18,10 +18,9 @@ class RpcServer : public IRpcServer
 public:
     RpcServer();
     ~RpcServer();
-    int Initialize(RpcManager* manager);
+    int Initialize(RpcManager* manager, const char* address, unsigned short port);
     virtual int Start();
     virtual int RegistListener(const char* name, IRpcListener* listener);
-    virtual int BindAddress(const char* address, unsigned short port);
     virtual void Close();
 private:
     void Work();
@@ -29,18 +28,24 @@ private:
     void NotifyListener();
     static void WorkThread(void *arg);
     static void ConnectionCallback(uv_stream_t* server, int status);
+    static Read(uv_stream_t* stream, ssize_t nread, const uv_buf_t* buf);
     static void Exit(uv_async_t* handle, int status);
-    void Stop();
-    void ProcessError();
     void WaitStop();
     RpcManager* manager_;
-    sockaddr_in addr_;
+    string address_;
+    unsigned short port_;
     uv_thread_t thread_;
-    uv_tcp_t server_;
     uv_loop_t* loop_;
-    uv_async_t exit_;
+    uv_async_t exit_notify_;
     ptr_vector clients_;
     string_ptr_map listeners_;
+
+    class RemoteClient
+    {
+    public:
+        RemoteClient();
+        ~RemoteClient();
+    };
 };
 
 }
