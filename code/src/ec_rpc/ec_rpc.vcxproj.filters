@@ -15,14 +15,17 @@
     <Filter Include="rpc_sender">
       <UniqueIdentifier>{13515e27-8e82-44f4-91b1-e7e40d36b548}</UniqueIdentifier>
     </Filter>
-    <Filter Include="rpc_net">
-      <UniqueIdentifier>{3020915f-9c8f-41ca-87e9-d41caa8c77b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="rpc_manager">
       <UniqueIdentifier>{063b4d06-70b1-405b-80c2-2a78e04baa73}</UniqueIdentifier>
     </Filter>
     <Filter Include="libuv">
       <UniqueIdentifier>{e1beab34-8c66-4fcf-aa7f-30c050a50075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{d717d1f9-3b25-42a2-b730-d9791e81ac51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base">
+      <UniqueIdentifier>{97b1d37c-5c39-40d9-afc7-4850570f13c1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +88,15 @@
     </ClInclude>
     <ClInclude Include="..\..\3rd\libuv\src\win\winsock.h">
       <Filter>libuv</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_common\interface.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="rpc_base.h">
+      <Filter>base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_define.h">
+      <Filter>base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -189,6 +201,9 @@
     </ClCompile>
     <ClCompile Include="..\..\3rd\libuv\src\win\winsock.c">
       <Filter>libuv</Filter>
+    </ClCompile>
+    <ClCompile Include="rpc_base.cc">
+      <Filter>base</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

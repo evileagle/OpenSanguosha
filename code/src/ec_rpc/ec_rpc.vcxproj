@@ -50,7 +50,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;EC_RPC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd/libuv/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/libuv/include;../../3rd</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -66,7 +66,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;EC_RPC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../inc;../../3rd/libuv/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../inc;../../3rd/libuv/include;../../3rd</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -85,12 +85,15 @@
     <ClInclude Include="..\..\3rd\libuv\src\win\stream-inl.h" />
     <ClInclude Include="..\..\3rd\libuv\src\win\winapi.h" />
     <ClInclude Include="..\..\3rd\libuv\src\win\winsock.h" />
+    <ClInclude Include="..\..\inc\ec_common\interface.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_define.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_manager.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_receiver.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_sender.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_client.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_listener.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_server.h" />
+    <ClInclude Include="rpc_base.h" />
     <ClInclude Include="rpc_manager_imp.h" />
     <ClInclude Include="rpc_local_sender.h" />
     <ClInclude Include="rpc_client_imp.h" />
@@ -127,6 +130,7 @@
     <ClCompile Include="..\..\3rd\libuv\src\win\util.c" />
     <ClCompile Include="..\..\3rd\libuv\src\win\winapi.c" />
     <ClCompile Include="..\..\3rd\libuv\src\win\winsock.c" />
+    <ClCompile Include="rpc_base.cc" />
     <ClCompile Include="rpc_local_sender.cc" />
     <ClCompile Include="rpc_client_imp.cc" />
     <ClCompile Include="rpc_manager_imp.cc" />

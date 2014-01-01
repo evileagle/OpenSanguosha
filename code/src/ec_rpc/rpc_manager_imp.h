@@ -4,10 +4,10 @@
 namespace EasyCard{
 namespace RPC{
 
-class RpcManager
+class RpcManager : public IRpcManager
 {
 public:
-    RpcManager
+    RpcManager();
 };
 
 }
