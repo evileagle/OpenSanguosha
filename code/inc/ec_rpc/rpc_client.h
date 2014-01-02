@@ -12,6 +12,8 @@ class IRpcClient : public Interface
 {
 public:
     virtual int Connect(const char* address, unsigned short port) = 0;
+    virtual int CreateSender(const char* name, IRpcReceiver* receiver, IRpcSender** sender) = 0;
+    virtual int GetAddress() = 0;
     virtual void Close() = 0;
 };
 

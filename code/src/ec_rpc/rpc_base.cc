@@ -18,6 +18,17 @@ RpcBase::~RpcBase()
 
 }
 
+int RpcBase::Initialize()
+{
+    if (loop_ == NULL)
+    {
+        loop_ = uv_loop_new();
+        exit_ = new uv_async_t;
+        memset(exit_, 0, sizeof(*exit_));
+        uv_async_init(loop_, exit_, Exit);
+    }
+}
+
 void RpcBase::SetAddress( const char* address, unsigned short port )
 {
     if (address == NULL)
@@ -50,12 +61,29 @@ void RpcBase::WorkThread( void *arg )
 
 void RpcBase::Work()
 {
-    uv_async_init(loop_, &exit_, Exit);
-    uv_listen((uv_stream_t*)&server_, SOMAXCONN, ConnectionCallback);
     uv_run(loop_, UV_RUN_DEFAULT);
+    CleanUp();
+}
 
-    uv_close((uv_handle_t*)&server_, NULL);
-    uv_close((uv_handle_t*)&exit_, NULL);
+void RpcBase::ProcessError()
+{
+    Stop();
+}
+
+void RpcBase::Exit( uv_async_t* handle, int status )
+{
+    RpcBase* pThis = (RpcBase*)handle->loop->data;
+    pThis->Stop();
+}
+
+void RpcBase::Stop()
+{
+    uv_stop(loop_);
+}
+
+void RpcBase::CleanUp()
+{
+    uv_close((uv_handle_t*)exit_, NULL);
     uv_loop_delete(loop_);
 }
 

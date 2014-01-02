@@ -9,8 +9,7 @@ namespace RPC{
 class IRpcManager : public Interface
 {
 public:
-    virtual int CreateSender(const char* name, IRpcSender** sender) = 0;
-    virtual int RegistListener(const char* name, IRpcListener* listener) = 0;
+    
 
 };
 }

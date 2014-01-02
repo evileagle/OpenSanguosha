@@ -18,7 +18,7 @@ class RpcServer : public IRpcServer, public RpcBase
 public:
     RpcServer();
     ~RpcServer();
-    virtual int Initialize(RpcManager* manager);
+    virtual int Initialize();
     virtual int Listen();
     virtual int RegistListener(const char* name, IRpcListener* listener);
     virtual int BindAddress(const char* address, unsigned short port);
@@ -27,12 +27,9 @@ private:
     void OnConnection(int status);
     void NotifyListener();
     static void ConnectionCallback(uv_stream_t* server, int status);
-    static void Exit(uv_async_t* handle, int status);
-    void Stop();
-    void ProcessError();
     void WaitStop();
     RpcManager* manager_;
-    uv_tcp_t server_;
+    uv_tcp_t* server_;
     ptr_vector clients_;
     string_ptr_map listeners_;
 };

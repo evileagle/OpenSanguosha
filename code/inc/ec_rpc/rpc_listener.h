@@ -10,7 +10,7 @@ class IRpcSender;
 class IRpcListener
 {
 public:
-    virtual void OnAccept(const char* name, IRpcSender* sender) = 0;
+    virtual void OnAccept(const char* name, IRpcClient* client) = 0;
     virtual void OnClose(const char* name) = 0;
 };
 }
