@@ -12,9 +12,6 @@
     <Filter Include="rpc_server">
       <UniqueIdentifier>{c2a70670-b662-4dbd-a3fb-110669e729b5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="rpc_sender">
-      <UniqueIdentifier>{13515e27-8e82-44f4-91b1-e7e40d36b548}</UniqueIdentifier>
-    </Filter>
     <Filter Include="rpc_manager">
       <UniqueIdentifier>{063b4d06-70b1-405b-80c2-2a78e04baa73}</UniqueIdentifier>
     </Filter>
@@ -27,39 +24,24 @@
     <Filter Include="base">
       <UniqueIdentifier>{97b1d37c-5c39-40d9-afc7-4850570f13c1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="rpc_register">
+      <UniqueIdentifier>{6535e11f-602d-488c-8561-57d48f7b00b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rpc_receiver">
+      <UniqueIdentifier>{13515e27-8e82-44f4-91b1-e7e40d36b548}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{7157fb89-a471-493c-a84d-eeb306fb7d69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rpc_server_imp.h">
       <Filter>rpc_server</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_server.h">
-      <Filter>rpc_server</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_client.h">
-      <Filter>rpc_client</Filter>
-    </ClInclude>
     <ClInclude Include="rpc_client_imp.h">
       <Filter>rpc_client</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_listener.h">
-      <Filter>rpc_server</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_receiver.h">
-      <Filter>rpc_sender</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_sender.h">
-      <Filter>rpc_sender</Filter>
-    </ClInclude>
-    <ClInclude Include="rpc_net_sender.h">
-      <Filter>rpc_sender</Filter>
-    </ClInclude>
-    <ClInclude Include="rpc_local_sender.h">
-      <Filter>rpc_sender</Filter>
-    </ClInclude>
     <ClInclude Include="rpc_manager_imp.h">
-      <Filter>rpc_manager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_manager.h">
       <Filter>rpc_manager</Filter>
     </ClInclude>
     <ClInclude Include="..\..\3rd\libuv\src\queue.h">
@@ -98,6 +80,30 @@
     <ClInclude Include="..\..\inc\ec_rpc\rpc_define.h">
       <Filter>base</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_register.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_manager.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_receiver.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_acceptor.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_listener.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_connecter.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_error.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_handler.h">
+      <Filter>interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="rpc_server_imp.cc">
@@ -105,12 +111,6 @@
     </ClCompile>
     <ClCompile Include="rpc_client_imp.cc">
       <Filter>rpc_client</Filter>
-    </ClCompile>
-    <ClCompile Include="rpc_local_sender.cc">
-      <Filter>rpc_sender</Filter>
-    </ClCompile>
-    <ClCompile Include="rpc_net_sender.cc">
-      <Filter>rpc_sender</Filter>
     </ClCompile>
     <ClCompile Include="rpc_manager_imp.cc">
       <Filter>rpc_manager</Filter>

@@ -86,18 +86,18 @@
     <ClInclude Include="..\..\3rd\libuv\src\win\winapi.h" />
     <ClInclude Include="..\..\3rd\libuv\src\win\winsock.h" />
     <ClInclude Include="..\..\inc\ec_common\interface.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_connecter.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_define.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_error.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_handler.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_manager.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_receiver.h" />
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_sender.h" />
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_client.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_register.h" />
+    <ClInclude Include="..\..\inc\ec_rpc\rpc_acceptor.h" />
     <ClInclude Include="..\..\inc\ec_rpc\rpc_listener.h" />
-    <ClInclude Include="..\..\inc\ec_rpc\rpc_server.h" />
     <ClInclude Include="rpc_base.h" />
     <ClInclude Include="rpc_manager_imp.h" />
-    <ClInclude Include="rpc_local_sender.h" />
     <ClInclude Include="rpc_client_imp.h" />
-    <ClInclude Include="rpc_net_sender.h" />
     <ClInclude Include="rpc_server_imp.h" />
   </ItemGroup>
   <ItemGroup>
@@ -131,10 +131,8 @@
     <ClCompile Include="..\..\3rd\libuv\src\win\winapi.c" />
     <ClCompile Include="..\..\3rd\libuv\src\win\winsock.c" />
     <ClCompile Include="rpc_base.cc" />
-    <ClCompile Include="rpc_local_sender.cc" />
     <ClCompile Include="rpc_client_imp.cc" />
     <ClCompile Include="rpc_manager_imp.cc" />
-    <ClCompile Include="rpc_net_sender.cc" />
     <ClCompile Include="rpc_server_imp.cc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

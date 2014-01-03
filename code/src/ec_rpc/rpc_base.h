@@ -9,7 +9,7 @@ namespace EasyCard{
 namespace RPC{
 using namespace std;
 
-class RpcBase : public IRpcManager
+class RpcBase : public IRpcRegister
 {
 public:
     RpcBase();
